@@ -10,9 +10,9 @@ const toggleLocales = () => {
 </script>
 
 <template>
-  <div flex mt-3 text-sm >
+  <div bar--info flex mt-3 text-sm >
     <div flex-none class="w-4/10">
-      <p>Welcome to IT Solutions</p>
+      <p text-left pl-4>Welcome to IT Solutions</p>
     </div>
     <div flex-auto class="w-4/10" flex>
       <div mr-10 flex items-center>
@@ -65,4 +65,9 @@ const toggleLocales = () => {
   $bg: #dedcdc;
   $bg--dark: #091320;
   $bglogo: #fff;
+  .bar--info{
+    p{
+      color: $tColor1;
+    }
+  }
 </style>
