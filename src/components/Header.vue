@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import type { ref, computed } from 'vue'
+import { ref } from 'vue'
 const { t, availableLocales, locale } = useI18n()
 const socialIcon = ref(
   [
@@ -19,11 +19,10 @@ const menu = ref(
 )
 const langue = ref(
   [
-    { link: '/home', label: 'Home' },
-    { link: '/services', label: 'Services' },
-    { link: '/projects', label: 'Projects' },
-    { link: '/faq', label: 'FAQ' },
-    { link: '/contact', label: 'Contact' },
+    { code: 'en', label: 'English', flag: '/langue/usa.svg', active: false },
+    { code: 'fr', label: 'Français', flag: '/langue/france.svg', active: false },
+    { code: 'de', label: 'allemand', flag: '/langue/de.svg', active: false },
+    { code: 'ru', label: 'русский', flag: '/langue/ru.svg', active: false },
   ],
 )
 const address = ref(
@@ -41,14 +40,14 @@ const toggleLocales = () => {
 </script>
 
 <template>
-  <div class="top--bar" flex p-2 pl-20 pr-20 text-xs >
+  <div class="top--bar" flex p-2 pl-20 pr-20 text-xs>
     <div flex-none class="w-6/10">
       <p text-left pl-4>
         Welcome to Think-Dev
       </p>
     </div>
     <div flex-auto flex justify-end>
-      <div v-for="(ls, id) in address" :key="id"  pr-2 pl-2 flex items-center>
+      <div v-for="(ls, id) in address" :key="id" pr-2 pl-2 flex items-center>
         <div :class="ls.icon" class="icon--top--bar text-sm" />
         <p pl-2>
           {{ ls.label }}
@@ -57,49 +56,53 @@ const toggleLocales = () => {
     </div>
     <div class="w-1/10 flex-auto flex justify-end ">
       <div v-for="(ls, id) in socialIcon" :key="id" pl-4>
-        <a :href="ls.link">
+        <a :href="ls.link" >
           <div :class="ls.icon" class="icon--top--bar text-sm" />
         </a>
       </div>
     </div>
   </div>
 
-  <nav text-xl >
-    <div flex pl-10 pr-10 p-2 items-center>
-      <div w-20>
+  <nav text-xl w-full flex>
+    <div items-center w-full flex >
+      <div class="w-1/4" p-2 ml-15>
         <a href="/">
-          <img src="/pwa-512x512.png" alt="tdev-logo">
+          <img src="/pwa-512x512.png" alt="tdev-logo" w-20>
         </a>
       </div>
-      <div ml-4>
-        <ul flex justify-items-stretch>
-          <li v-for="(ls, id) in menu" :key="id" >
+      <div ml-4 mr-4 class="w-7/12">
+        <ul flex justify-items-stretch text-base>
+          <li v-for="(ls, id) in menu" :key="id" p-2 ml-2 mr-2 hover:text-blue-700 @click="toggleLocales()">
             <a :href="ls.link">
               {{ ls.label }}
             </a>
           </li>
         </ul>
       </div>
-      <div>
-
+      <div w-28 flex ml-1 items-center>
+        <div w-6>
+          <img src="/langue/france.svg" alt="" rounded-full>
+        </div>
+        <button class="icon-btn mx-2 !outline-none ml-5" :title="t('button.toggle_dark')" @click="toggleDark()">
+          <div i="carbon-sun dark:carbon-moon" />
+        </button>
+        <ul justify-items-stretch class="list-lng">
+          <li v-for="(ls, id) in langue" :key="id" class="items-center flex text-xs">
+            <img :src="ls.flag" :alt="ls.code" w-5 m-1 rounded-full>
+            <p>{{ ls.label }}</p>
+          </li>
+        </ul>
       </div>
     </div>
-    <img src="/pwa-512x512.png" alt="">
-    <RouterLink class="icon-btn mx-2" to="/" :title="t('button.home')">
-      <div i-carbon-campsite />
-    </RouterLink>
-
-    <button class="icon-btn mx-2 !outline-none" :title="t('button.toggle_dark')" @click="toggleDark()">
-      <div i="carbon-sun dark:carbon-moon" />
-    </button>
-
-    <a class="icon-btn mx-2" :title="t('button.toggle_langs')" @click="toggleLocales()">
-      <div i-carbon-language />
-    </a>
-
-    <RouterLink class="icon-btn mx-2" to="/about" :title="t('button.about')">
-      <div i-carbon-dicom-overlay />
-    </RouterLink>
+    <div flex items-center class="call--btn ">
+      <span ml-10 rounded-full bg-slate-100 p-3 hover:bg-stone-800>
+        <div i-carbon:phone-voice-filled hover:bg-slate-100 class="icon--top--bar" />
+      </span>
+      <span ml-4>
+        <p text-xs>(+237) 697 040 726</p>
+        <p text-xs>CALL ANYTIME</p>
+      </span>
+    </div>
   </nav>
 </template>
 
@@ -119,5 +122,20 @@ const toggleLocales = () => {
   }
   .icon--top--bar{
     color: $icolor;
+  }
+  .call--btn{
+    background-image: linear-gradient(205deg, #4d63e2,#4d63e2, #576be1, #5c6fda,#6e7ed3);
+    width: 400px;
+  }
+  .list-lng{
+    position: absolute;
+    top: 13vh;
+    border: solid 1px #4d63e2;
+    border-radius: 5px;
+    z-index: 9999;
+    li{
+      padding: 5px;
+      border-bottom: solid 1px #4d63e2;
+    }
   }
 </style>
