@@ -37,6 +37,13 @@ const toggleLocales = () => {
   const locales = availableLocales
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
 }
+let showListLangue: boolean = ref(false)
+function closeListLangue() {
+  showListLangue.value = false
+}
+function openListLangue() {
+  showListLangue.value = true
+}
 </script>
 
 <template>
@@ -56,7 +63,7 @@ const toggleLocales = () => {
     </div>
     <div class="w-1/10 flex-auto flex justify-end ">
       <div v-for="(ls, id) in socialIcon" :key="id" pl-4>
-        <a :href="ls.link" >
+        <a :href="ls.link">
           <div :class="ls.icon" class="icon--top--bar text-sm" />
         </a>
       </div>
@@ -80,18 +87,12 @@ const toggleLocales = () => {
         </ul>
       </div>
       <div w-28 flex ml-1 items-center>
-        <div w-6>
+        <div w-6 @click="openListLangue">
           <img src="/langue/france.svg" alt="" rounded-full>
         </div>
         <button class="icon-btn mx-2 !outline-none ml-5" :title="t('button.toggle_dark')" @click="toggleDark()">
           <div i="carbon-sun dark:carbon-moon" />
         </button>
-        <ul justify-items-stretch class="list-lng">
-          <li v-for="(ls, id) in langue" :key="id" class="items-center flex text-xs">
-            <img :src="ls.flag" :alt="ls.code" w-5 m-1 rounded-full>
-            <p>{{ ls.label }}</p>
-          </li>
-        </ul>
       </div>
     </div>
     <div flex items-center class="call--btn ">
@@ -104,6 +105,14 @@ const toggleLocales = () => {
       </span>
     </div>
   </nav>
+  <div v-if="showListLangue" class="content--lng" @click="closeListLangue">
+    <ul justify-items-stretch class="list-lng" >
+      <li v-for="(ls, id) in langue" :key="id" class="items-center flex text-xs">
+        <img :src="ls.flag" :alt="ls.code" w-5 m-1 rounded-full>
+        <p>{{ ls.label }}</p>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -130,6 +139,7 @@ const toggleLocales = () => {
   .list-lng{
     position: absolute;
     top: 13vh;
+    right: 350px;
     border: solid 1px #4d63e2;
     border-radius: 5px;
     z-index: 9999;
@@ -137,5 +147,19 @@ const toggleLocales = () => {
       padding: 5px;
       border-bottom: solid 1px #4d63e2;
     }
+  }
+  .content--lng{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+    display: block !important;
+    transition: opacity 0.15s linear;
+    box-sizing: border-box;
   }
 </style>

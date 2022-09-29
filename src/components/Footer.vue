@@ -9,7 +9,15 @@ const toggleLocales = () => {
 </script>
 
 <template>
-  <nav text-xl mt-6>
+  <div class="content--footer">
+    <div class="">
+
+    </div>
+    <div class="copr">
+      <p>© All Copyright 2022 by Think-Dev</p>
+    </div>
+  </div>
+  <!-- <nav text-xl mt-6>
     <RouterLink class="icon-btn mx-2" to="/" :title="t('button.home')">
       <div i-carbon-campsite />
     </RouterLink>
@@ -25,5 +33,19 @@ const toggleLocales = () => {
     <RouterLink class="icon-btn mx-2" to="/about" :title="t('button.about')">
       <div i-carbon-dicom-overlay />
     </RouterLink>
-  </nav>
+  </nav> -->
 </template>
+
+<style lang="scss">
+  .content--footer{
+    width: 100%;
+    display: inline-block;
+    .copr{
+      background: #13206c;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      color: rgb(255, 255, 255);
+    }
+  }
+</style>
