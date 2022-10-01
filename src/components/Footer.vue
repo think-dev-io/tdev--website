@@ -13,11 +13,25 @@ const socialIcon = ref(
     { icon: 'i-carbon:logo-twitter', link: '' },
   ],
 )
+const services = ref(
+  [
+    { link: '/', label: 'Web/Mobile development' },
+    { link: '/', label: 'IT Consultent' },
+    { link: '/', label: 'hosting ' },
+  ],
+)
+const address = ref(
+  [
+    { icon: 'i-carbon:phone-voice-filled', label: '+237 670209851', link: '/' },
+    { icon: 'i-carbon:email', label: 'contact@think-dev.com', link: '/' },
+    { icon: 'i-carbon:location', label: 'Douala Cameroun', link: '/' },
+  ],
+)
 </script>
 
 <template>
   <div class="content--footer">
-    <div class="footer pl-30 pr-30 pt-30 pb-30 flex flex-wrap justify-center ">
+    <div class="footer pl-30 pr-30 pt-20 pb-20 flex flex-wrap justify-center ">
       <div w-80 p-5>
         <a href="/">
           <img src="/pwa-512x512.png" alt="tdev-logo" w-20>
@@ -36,9 +50,31 @@ const socialIcon = ref(
           </div>
         </div>
       </div>
-      <div w-80 p-5>bnb</div>
-      <div w-80 p-5>ncmsd  </div>
-      <div w-80 p-5>mds m d</div>
+      <div w-80 p-5>
+        <h3 class="text-2xl font-bold h--footer">
+          Services
+        </h3>
+        <div class="service-list mt-5">
+          <a v-for="(ls, id) in services" :key="id" :href="ls.link" mb-3>{{ ls.label }}</a>
+        </div>
+      </div>
+      <div w-80 p-5>
+        <h3 class="text-2xl font-bold h--footer">Subscribe</h3>
+        <p mt-5>Sign up to receive the latest articles</p>
+        <form action="" class="form-newletter mt-3">
+          <input type="email" class="form--email" placeholder="enter your email address">
+          <input type="button" value="REGISTER" class="btn--submit" mt-3>
+        </form>
+      </div>
+      <div w-80 p-5>
+        <h3 class="text-2xl font-bold h--footer">Contact</h3>
+        <div class="service-list mt-5">
+          <div v-for="(ls, id) in address" :key="id" mb-3 flex>
+            <div :class="ls.icon" mr-4 />
+            <span> {{ ls.label }}</span>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="copr">
       <p>© All Copyright 2022 by Think-Dev</p>
@@ -78,11 +114,37 @@ const socialIcon = ref(
     .footer{
       background: #16257c;
       width: 100%;
-      height: 60vh;
       color: #ffff;
+    }
+    .h--footer::after{
+      content: '';
+      width: 35px;
+      height: 2px;
+      display: block;
+      background-color: $icolor;
+      margin-top: 8px;
     }
   }
   .icon--border--color{
     border-color: $icolor !important;
+  }
+  .service-list{
+    display: grid;
+  }
+  .form-newletter{
+    display: grid;
+    .form--email{
+      height: 40px;
+      border: 1px solid #8a8d90;
+      border-radius: 5px;
+      padding: 7px;
+    }
+    .btn--submit{
+      border-radius: 5px;
+      color: #ffff;
+      background-color: $icolor ;
+      height: 40px;
+      width: 50%;
+    }
   }
 </style>
