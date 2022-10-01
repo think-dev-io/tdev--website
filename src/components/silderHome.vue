@@ -20,3 +20,10 @@ const { count, inc, dec } = useCounter(props.initial)
     </button>
   </div>
 </template>
+
+<style lang="scss">
+.content--header{
+  height: 20vh;
+  border: 1px solid;
+}
+</style>
