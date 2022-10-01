@@ -23,7 +23,8 @@ const { count, inc, dec } = useCounter(props.initial)
 
 <style lang="scss">
 .content--header{
-  height: 20vh;
+  height: 50vh;
+  width: 100%;
   border: 1px solid;
 }
 </style>
