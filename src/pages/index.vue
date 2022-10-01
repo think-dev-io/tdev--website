@@ -12,6 +12,7 @@ const { t } = useI18n()
 </script>
 
 <template>
+  <silder-home :initial="10" />
   <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>

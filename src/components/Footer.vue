@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const { t, availableLocales, locale } = useI18n()
+// const { t, availableLocales, locale } = useI18n()
 
-const toggleLocales = () => {
-  // change to some real logic
-  const locales = availableLocales
-  locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
-}
+// const toggleLocales = () => {
+//   // change to some real logic
+//   const locales = availableLocales
+//   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
+// }
 const socialIcon = ref(
   [
     { icon: 'i-carbon:logo-facebook', link: '' },
@@ -36,7 +36,7 @@ const address = ref(
         <a href="/">
           <img src="/pwa-512x512.png" alt="tdev-logo" w-20>
         </a>
-        <p mt-5>We work with a passion of taking challenges and creating new ones in advertising sector.</p>
+        <p mt-5> We work with a passion of taking challenges and creating new ones in advertising sector. </p>
         <div mt-5>
           <div class="flex">
             <a
