@@ -37,13 +37,7 @@ const toggleLocales = () => {
   const locales = availableLocales
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
 }
-let showListLangue: boolean = ref(false)
-function closeListLangue() {
-  showListLangue.value = false
-}
-function openListLangue() {
-  showListLangue.value = true
-}
+const showListLangue = ref(false)
 </script>
 
 <template>
@@ -87,7 +81,7 @@ function openListLangue() {
         </ul>
       </div>
       <div w-28 flex ml-1 items-center>
-        <div w-6 @click="openListLangue">
+        <div w-6 @click="showListLangue = true">
           <img src="/langue/france.svg" alt="" rounded-full>
         </div>
         <button class="icon-btn mx-2 !outline-none ml-5" :title="t('button.toggle_dark')" @click="toggleDark()">
@@ -105,7 +99,7 @@ function openListLangue() {
       </span>
     </div>
   </nav>
-  <div v-if="showListLangue" class="content--lng" @click="closeListLangue">
+  <div v-if="showListLangue" class="content--lng" @click="showListLangue = false">
     <ul justify-items-stretch class="list-lng" >
       <li v-for="(ls, id) in langue" :key="id" class="items-center flex text-xs">
         <img :src="ls.flag" :alt="ls.code" w-5 m-1 rounded-full>
