@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { Ref } from 'vue'
+import type { Address, Menu, SOcialIcon } from '../methods/interface'
 // const { t, availableLocales, locale } = useI18n()
 
 // const toggleLocales = () => {
@@ -6,21 +8,21 @@
 //   const locales = availableLocales
 //   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
 // }
-const socialIcon = ref(
+const socialIcon: Ref<SOcialIcon[]> = ref(
   [
     { icon: 'i-carbon:logo-facebook', link: '' },
     { icon: 'i-carbon:logo-instagram', link: '' },
     { icon: 'i-carbon:logo-twitter', link: '' },
   ],
 )
-const services = ref(
+const services: Ref<Menu[]> = ref(
   [
     { link: '/', label: 'Web/Mobile development' },
     { link: '/', label: 'IT Consultent' },
     { link: '/', label: 'hosting ' },
   ],
 )
-const address = ref(
+const address: Ref<Address[]> = ref(
   [
     { icon: 'i-carbon:phone-voice-filled', label: '+237 670209851', link: '/' },
     { icon: 'i-carbon:email', label: 'contact@think-dev.com', link: '/' },
