@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Ref } from 'vue'
-import type { Address, Langue, Menu, SOcialIcon } from '../methods/interface'
+import type { Address, Langue, Menu, PhoneNumber, SOcialIcon } from '../methods/interface'
 const { t, availableLocales, locale } = useI18n()
 const socialIcon: Ref<SOcialIcon[]> = ref(
   [
@@ -10,6 +10,10 @@ const socialIcon: Ref<SOcialIcon[]> = ref(
     { icon: 'i-carbon:logo-twitter', link: '' },
   ],
 )
+const phoneNumber: Ref<PhoneNumber> = ref({
+  code: '+237',
+  number: 670209851,
+})
 const menu: Ref<Menu[]> = ref(
   [
     { link: '/', label: 'Home' },
@@ -29,8 +33,8 @@ const langue: Ref<Langue[]> = ref(
 )
 const address: Ref<Address[]> = ref(
   [
-    { icon: 'i-carbon:email', label: 'contact@think-dev.com' },
-    { icon: 'i-carbon:location', label: 'Douala Cameroun' },
+    { icon: 'i-carbon:email', label: 'contact@think-dev.com', link: 'contact@think-dev.com', type: 'mailto' },
+    { icon: 'i-carbon:location', label: 'ouala, Cameroun', link: 'https://www.google.cm/maps/place/Douala, Cameroun', type: '' },
   ],
 )
 
@@ -50,16 +54,22 @@ const showListLangue = ref(false)
       </p>
     </div>
     <div flex-auto flex justify-end>
-      <div v-for="(ls, id) in address" :key="id" pr-2 pl-2 flex items-center>
+      <a
+        v-for="(ls, id) in address"
+        :key="id"
+        :href="`${ls.type}:${ls.link}`"
+        target="_blank"
+        pr-2 pl-2 flex items-center
+      >
         <div :class="ls.icon" class="icon--top--bar text-sm" />
         <p pl-2>
           {{ ls.label }}
         </p>
-      </div>
+      </a>
     </div>
     <div class="w-1/10 flex-auto flex justify-end ">
       <div v-for="(ls, id) in socialIcon" :key="id" pl-4>
-        <a :href="ls.link">
+        <a :href="ls.link" target="_blank">
           <div :class="ls.icon" class="icon--top--bar text-sm" />
         </a>
       </div>
@@ -91,15 +101,19 @@ const showListLangue = ref(false)
         </button>
       </div>
     </div>
-    <div flex items-center class="call--btn ">
+    <a
+      flex items-center
+      class="call--btn"
+      :href="`tel:${phoneNumber.code}${phoneNumber.number}`"
+    >
       <span ml-10 rounded-full bg-slate-100 p-3 hover:bg-stone-800>
         <div i-carbon:phone-voice-filled hover:bg-slate-100 class="icon--top--bar" />
       </span>
       <span ml-4>
-        <p text-xs>(+237) 697 040 726</p>
+        <p text-xs hover:underline>({{ phoneNumber.code }}) {{ phoneNumber.number }}</p>
         <p text-xs>CALL ANYTIME</p>
       </span>
-    </div>
+    </a>
   </nav>
   <div v-if="showListLangue" class="content--lng" @click="showListLangue = false">
     <ul justify-items-stretch class="list-lng">
