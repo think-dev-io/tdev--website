@@ -44,3 +44,25 @@ export declare interface silder {
     link: string
   }
 }
+
+export declare interface SOcialIcon {
+  icon: string
+  link: string
+}
+
+export declare interface Menu {
+  link: string
+  label: string
+}
+
+export declare interface Address {
+  icon: string
+  label: string
+}
+
+export declare interface Langue {
+  code: string
+  label: string
+  flag: string
+  active: boolean
+}

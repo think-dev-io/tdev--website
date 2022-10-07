@@ -11,7 +11,7 @@ const go = () => {
 }
 
 const { t } = useI18n()
-const allSidler: Ref<silder> = ref(
+const allSidler: Ref<silder[]> = ref(
   [
     {
       img: '/silder2.jpeg',

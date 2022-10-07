@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import type { Ref } from 'vue'
+import type { Address, Langue, Menu, SOcialIcon } from '../methods/interface'
 const { t, availableLocales, locale } = useI18n()
-const socialIcon = ref(
+const socialIcon: Ref<SOcialIcon[]> = ref(
   [
     { icon: 'i-carbon:logo-facebook', link: '' },
     { icon: 'i-carbon:logo-instagram', link: '' },
     { icon: 'i-carbon:logo-twitter', link: '' },
   ],
 )
-const menu = ref(
+const menu: Ref<Menu[]> = ref(
   [
     { link: '/home', label: 'Home' },
     { link: '/services', label: 'Services' },
@@ -17,7 +19,7 @@ const menu = ref(
     { link: '/contact', label: 'Contact' },
   ],
 )
-const langue = ref(
+const langue: Ref<Langue[]> = ref(
   [
     { code: 'en', label: 'English', flag: '/langue/usa.svg', active: false },
     { code: 'fr', label: 'Français', flag: '/langue/france.svg', active: false },
@@ -25,7 +27,7 @@ const langue = ref(
     { code: 'ru', label: 'русский', flag: '/langue/ru.svg', active: false },
   ],
 )
-const address = ref(
+const address: Ref<Address[]> = ref(
   [
     { icon: 'i-carbon:email', label: 'contact@think-dev.com' },
     { icon: 'i-carbon:location', label: 'Douala Cameroun' },
