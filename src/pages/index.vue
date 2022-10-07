@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { Ref } from 'vue'
+import type { silder } from '../methods/interface'
 const user = useUserStore()
 const name = $ref(user.savedName)
 
@@ -9,10 +11,26 @@ const go = () => {
 }
 
 const { t } = useI18n()
+const allSidler: Ref<silder> = ref(
+  [
+    {
+      img: '/silder2.jpeg',
+      textOne: 'Welcome to best it solutions',
+      textTwo: 'Provide it solutions and services',
+      btn: { text: 'learn more ', link: '/' },
+    },
+    {
+      img: '/silder1.jpeg',
+      textOne: 'Welcome to best it solutions',
+      textTwo: 'IQ test - What is your IQ?',
+      btn: { text: 'Next', link: '/' },
+    },
+  ],
+)
 </script>
 
 <template>
-  <silder-home :initial="10" />
+  <silder-home :initial="allSidler" />
   <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>

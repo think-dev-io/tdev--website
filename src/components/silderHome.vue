@@ -1,33 +1,86 @@
 <script setup lang="ts">
+import type { Ref } from 'vue'
+import { ref } from 'vue'
+import type { silder } from '../methods/interface'
 const props = defineProps<{
-  initial: number
+  initial: silder[]
 }>()
-const { count, inc, dec } = useCounter(props.initial)
+// const { count, inc, dec } = useCounter(props.initial)
+const allSidler: Ref<silder[]> = ref(props.initial)
+const activeSilderIndex: Ref<number> = ref(0)
+onMounted(() => {
+  const totalSilder: Ref<number> = ref(allSidler.value.length)
+  const sidler: HTMLElement = document.getElementById(`silder${activeSilderIndex.value}`)
+  sidler.classList.remove('hidden')
+  setInterval(() => {
+    if (activeSilderIndex.value + 1 === totalSilder.value) {
+      const activeSilder: HTMLElement = document.getElementById(`silder${activeSilderIndex.value}`)
+      const swSidler: HTMLElement = document.getElementById(`silder${0}`)
+      swSidler.classList.remove('hidden')
+      activeSilder.classList.add('anime--close')
+      setTimeout(() => {
+        activeSilder.classList.add('hidden')
+        activeSilder.classList.remove('anime--close')
+      }, 3000)
+      activeSilderIndex.value = 0
+    }
+    else {
+      const activeSilder: HTMLElement = document.getElementById(`silder${activeSilderIndex.value}`)
+      const swSidler: HTMLElement = document.getElementById(`silder${activeSilderIndex.value + 1}`)
+      swSidler.classList.remove('hidden')
+      activeSilder.classList.add('anime--close')
+      setTimeout(() => {
+        activeSilder.classList.add('hidden')
+        activeSilder.classList.remove('anime--close')
+      }, 3000)
+      activeSilderIndex.value++
+    }
+  }, 5000)
+},
+)
 </script>
 
 <template>
   <div class="content--header">
-    <div class="bg--img">
-      <img src="/silder2.jpeg" alt="bg home" w-full h-max>
-    </div>
-    <div class="bg-all-header-home" />
-    <div class="content--silder flex flex-col justify-center">
-      <div>
-        <div class="content--anime--welcome">
-          <p text-xl font-bold mb-5 class="anime--welcome">
-            Welcome to best it solutions
-          </p>
-        </div>
-        <div class="content--anime--service">
-          <h1 mb-10 font-bold text-6xl class="anime--service">
-            Provide it solutions and services
-          </h1>
-          <a href="" class="btn--submit px-5 text-lg py-3 anime--welcome anime--service">learn more </a>
+    <div
+      v-for="(ls, id) in allSidler"
+      :id="`silder${id}`"
+      :key="id"
+      class="hidden"
+      z-999
+    >
+      <div class="bg--img">
+        <img :src="ls.img" alt="bg home" w-full h-max absolute>
+      </div>
+      <div class="bg-all-header-home" />
+      <div class="content--silder flex flex-col justify-center">
+        <div>
+          <div class="content--anime--welcome">
+            <p text-xl font-bold mb-5 class="anime--welcome uppercase">
+              {{ ls.textOne }}
+            </p>
+          </div>
+          <div class="content--anime--service">
+            <h1 mb-10 font-bold text-6xl class="anime--service capitalize">
+              {{ ls.textTwo }}
+            </h1>
+            <a :href="ls.btn.link" class="btn--submit px-5 text-lg py-3 anime--welcome anime--service capitalize">{{ ls.btn.text }}</a>
+          </div>
         </div>
       </div>
     </div>
+    <div class="btn--content--silder flex justify-center">
+      <div flex items-center>
+        <div
+          v-for="(ls, id) in allSidler"
+          :key="id"
+          class="btn--select-silder ml-2"
+          :class=" activeSilderIndex === id ? 'active' : ''"
+        />
+      </div>
+    </div>
   </div>
-  <div>
+  <!-- <div>
     {{ count }}
     <button class="inc" @click="inc()">
       +
@@ -35,7 +88,7 @@ const { count, inc, dec } = useCounter(props.initial)
     <button class="dec" @click="dec()">
       -
     </button>
-  </div>
+  </div> -->
 </template>
 
 <style lang="scss">
@@ -44,6 +97,7 @@ const { count, inc, dec } = useCounter(props.initial)
   position: relative;
   width: 100%;
   height: 80vh;
+  overflow: hidden;
 }
 .bg-all-header-home{
   position: absolute;
@@ -69,6 +123,9 @@ const { count, inc, dec } = useCounter(props.initial)
   height: 40px;
   width: 50%;
 }
+// .bg--img{
+//   width: 1293px;
+// }
 .anime--welcome{
   animation: slidein 3s ;
 
@@ -84,6 +141,10 @@ const { count, inc, dec } = useCounter(props.initial)
 .anime--service{
   animation: slidein2 3s ;
 
+}
+.anime--close{
+  position: absolute;
+  animation: slideinclose 2s ;
 }
 @keyframes slidein {
   from {
@@ -106,6 +167,37 @@ const { count, inc, dec } = useCounter(props.initial)
   to {
     // margin-right: 0%;
     // width: 100%;
+  }
+}
+@keyframes slideinclose {
+  from {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 102%;
+    width: 100%;
+  }
+}
+.btn--content--silder{
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  bottom: 150px;
+  padding: 50px;
+  z-index: 9999;
+  .btn--select-silder{
+    background: #847d94;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .active{
+    background: #fff;
+    width: 20px;
+    height: 20px;
   }
 }
 </style>
