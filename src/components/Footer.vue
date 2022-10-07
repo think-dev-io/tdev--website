@@ -10,9 +10,9 @@ import type { Address, Menu, SOcialIcon } from '../methods/interface'
 // }
 const socialIcon: Ref<SOcialIcon[]> = ref(
   [
-    { icon: 'i-carbon:logo-facebook', link: '' },
-    { icon: 'i-carbon:logo-instagram', link: '' },
-    { icon: 'i-carbon:logo-twitter', link: '' },
+    { icon: 'i-carbon:logo-facebook', link: 'https://fr-fr.facebook.com/' },
+    { icon: 'i-carbon:logo-instagram', link: 'https://fr-fr.facebook.com/' },
+    { icon: 'i-carbon:logo-twitter', link: 'https://fr-fr.facebook.com/' },
   ],
 )
 const services: Ref<Menu[]> = ref(
@@ -24,9 +24,9 @@ const services: Ref<Menu[]> = ref(
 )
 const address: Ref<Address[]> = ref(
   [
-    { icon: 'i-carbon:phone-voice-filled', label: '+237 670209851', link: '/' },
-    { icon: 'i-carbon:email', label: 'contact@think-dev.com', link: '/' },
-    { icon: 'i-carbon:location', label: 'Douala Cameroun', link: '/' },
+    { icon: 'i-carbon:phone-voice-filled', label: '(+237) 670209851', link: '+237670209851', type: 'tel:' },
+    { icon: 'i-carbon:email', label: 'contact@think-dev.com', link: 'contact@think-dev.com', type: 'mailto:' },
+    { icon: 'i-carbon:location', label: 'Douala, Cameroun', link: 'https://www.google.cm/maps/place/Douala, Cameroun', type: '' },
   ],
 )
 </script>
@@ -38,13 +38,16 @@ const address: Ref<Address[]> = ref(
         <a href="/">
           <img src="/pwa-512x512.png" alt="tdev-logo" w-20>
         </a>
-        <p mt-5> We work with a passion of taking challenges and creating new ones in advertising sector. </p>
+        <p mt-5>
+          We work with a passion of taking challenges and creating new ones in advertising sector.
+        </p>
         <div mt-5>
           <div class="flex">
             <a
               v-for="(lk, id) in socialIcon"
               :key="id"
               :href="lk.link"
+              target="_blank"
               class="icon--border--color  rounded-full border mr-3 text-center "
             >
               <div :class="lk.icon" class="text-base m-2" />
@@ -61,20 +64,32 @@ const address: Ref<Address[]> = ref(
         </div>
       </div>
       <div w-80 p-5>
-        <h3 class="text-2xl font-bold h--footer">Subscribe</h3>
-        <p mt-5>Sign up to receive the latest articles</p>
+        <h3 class="text-2xl font-bold h--footer">
+          Subscribe
+        </h3>
+        <p mt-5>
+          Sign up to receive the latest articles
+        </p>
         <form action="" class="form-newletter mt-3">
           <input type="email" class="form--email" placeholder="enter your email address">
           <input type="button" value="REGISTER" class="btn--submit" mt-3>
         </form>
       </div>
       <div w-80 p-5>
-        <h3 class="text-2xl font-bold h--footer">Contact</h3>
+        <h3 class="text-2xl font-bold h--footer">
+          Contact
+        </h3>
         <div class="service-list mt-5">
-          <div v-for="(ls, id) in address" :key="id" mb-3 flex>
+          <a
+            v-for="(ls, id) in address"
+            :key="id"
+            :href="`${ls.type}${ls.link}`"
+            target="_blank"
+            mb-3 flex
+          >
             <div :class="ls.icon" mr-4 />
             <span> {{ ls.label }}</span>
-          </div>
+          </a>
         </div>
       </div>
     </div>

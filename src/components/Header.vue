@@ -5,9 +5,9 @@ import type { Address, Langue, Menu, PhoneNumber, SOcialIcon } from '../methods/
 const { t, availableLocales, locale } = useI18n()
 const socialIcon: Ref<SOcialIcon[]> = ref(
   [
-    { icon: 'i-carbon:logo-facebook', link: '' },
-    { icon: 'i-carbon:logo-instagram', link: '' },
-    { icon: 'i-carbon:logo-twitter', link: '' },
+    { icon: 'i-carbon:logo-facebook', link: 'https://fr-fr.facebook.com/' },
+    { icon: 'i-carbon:logo-instagram', link: 'https://fr-fr.facebook.com/' },
+    { icon: 'i-carbon:logo-twitter', link: 'https://fr-fr.facebook.com/' },
   ],
 )
 const phoneNumber: Ref<PhoneNumber> = ref({
@@ -33,8 +33,8 @@ const langue: Ref<Langue[]> = ref(
 )
 const address: Ref<Address[]> = ref(
   [
-    { icon: 'i-carbon:email', label: 'contact@think-dev.com', link: 'contact@think-dev.com', type: 'mailto' },
-    { icon: 'i-carbon:location', label: 'ouala, Cameroun', link: 'https://www.google.cm/maps/place/Douala, Cameroun', type: '' },
+    { icon: 'i-carbon:email', label: 'contact@think-dev.com', link: 'contact@think-dev.com', type: 'mailto:' },
+    { icon: 'i-carbon:location', label: 'Douala, Cameroun', link: 'https://www.google.cm/maps/place/Douala, Cameroun', type: '' },
   ],
 )
 
@@ -57,7 +57,7 @@ const showListLangue = ref(false)
       <a
         v-for="(ls, id) in address"
         :key="id"
-        :href="`${ls.type}:${ls.link}`"
+        :href="`${ls.type}${ls.link}`"
         target="_blank"
         pr-2 pl-2 flex items-center
       >
