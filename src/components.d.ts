@@ -14,5 +14,6 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SilderHome: typeof import('./components/silderHome.vue')['default']
+    Topbar: typeof import('./components/topbar.vue')['default']
   }
 }

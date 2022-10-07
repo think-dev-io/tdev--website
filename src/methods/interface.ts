@@ -37,3 +37,8 @@ export declare interface PhoneNumber {
   code: number | string
   number: number
 }
+
+export declare interface Topbarcontent {
+  img: string
+  name: string
+}
