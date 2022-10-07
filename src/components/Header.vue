@@ -12,7 +12,7 @@ const socialIcon: Ref<SOcialIcon[]> = ref(
 )
 const menu: Ref<Menu[]> = ref(
   [
-    { link: '/home', label: 'Home' },
+    { link: '/', label: 'Home' },
     { link: '/services', label: 'Services' },
     { link: '/projects', label: 'Projects' },
     { link: '/faq', label: 'FAQ' },
