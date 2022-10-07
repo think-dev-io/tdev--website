@@ -102,9 +102,9 @@ const showListLangue = ref(false)
     </div>
   </nav>
   <div v-if="showListLangue" class="content--lng" @click="showListLangue = false">
-    <ul justify-items-stretch class="list-lng" >
+    <ul justify-items-stretch class="list-lng">
       <li v-for="(ls, id) in langue" :key="id" class="items-center flex text-xs">
-        <img :src="ls.flag" :alt="ls.code" w-5 m-1 rounded-full>
+        <img :src="ls.flag" :alt="ls.code" w-5 m-1 mr-2 rounded-full>
         <p>{{ ls.label }}</p>
       </li>
     </ul>
@@ -135,13 +135,14 @@ const showListLangue = ref(false)
   .list-lng{
     position: absolute;
     top: 13vh;
+    background-color: #fff;
     right: 350px;
     border: solid 1px #4d63e2;
     border-radius: 5px;
     z-index: 9999;
     li{
-      padding: 5px;
-      border-bottom: solid 1px #4d63e2;
+      padding: 5px 10px;
+      border-bottom: solid 1px #c1c6e6;
     }
   }
   .content--lng{
