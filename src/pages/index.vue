@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import type { silder } from '../methods/interface'
-import type { leftContentAbout, rightContentAbout } from '../methods/interface'
+import type { leftContentAbout, rightContentAbout, silder } from '../methods/interface'
 const user = useUserStore()
 const name = $ref(user.savedName)
 
