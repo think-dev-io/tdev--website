@@ -77,7 +77,7 @@ const showListLangue = ref(false)
   </div>
 
   <nav text-xl w-full flex>
-    <div items-center w-full flex >
+    <div items-center w-full flex>
       <div class="w-1/4" p-2 ml-15>
         <a href="/">
           <img src="/pwa-512x512.png" alt="tdev-logo" w-20>
@@ -110,7 +110,7 @@ const showListLangue = ref(false)
         <div i-carbon:phone-voice-filled hover:bg-slate-100 class="icon--top--bar" />
       </span>
       <span ml-4>
-        <p text-xs hover:underline>({{ phoneNumber.code }}) {{ phoneNumber.number }}</p>
+        <p text-xs class="over--link">({{ phoneNumber.code }}) {{ phoneNumber.number }}</p>
         <p text-xs>CALL ANYTIME</p>
       </span>
     </a>
@@ -173,4 +173,23 @@ const showListLangue = ref(false)
     transition: opacity 0.15s linear;
     box-sizing: border-box;
   }
+  .over--link:hover::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    display: block;
+    background-color: $icolor;
+    margin-top: 2px;
+    animation: olink 2s;
+  }
+
+  @keyframes olink {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+      }
+    }
 </style>

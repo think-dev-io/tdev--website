@@ -1,4 +1,3 @@
-// }
 export declare interface silder {
   img: string
   textOne: string
@@ -42,3 +41,38 @@ export declare interface Topbarcontent {
   img: string
   name: string
 }
+
+export declare interface leftContentAbout {
+  img1: string
+  img2: string
+  video: string
+  experience: {
+    number: number
+    text: string | 'Years Experience'
+  }
+}
+
+export declare interface rightContentAbout {
+  text: string
+  text2: string
+  paragraphe: string
+  paragraphe2: string
+  service: {
+    name: {
+      label: string
+      link: string
+    }
+    desc: string
+    icon: string
+  }[]
+  team: {
+    btn: {
+      text: string
+      link: string
+    }
+    name: string
+    desc: string
+    img: string
+  }[]
+}
+
