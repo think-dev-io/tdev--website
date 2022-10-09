@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import { ref } from 'vue'
-import type { Topbarcontent } from '../../methods/interface'
+import type { Topbarcontent, leftContentAbout } from '../../methods/interface'
 
 const props = defineProps<{
   initial: Topbarcontent
+  leftContent: leftContentAbout
 }>()
 // const { count, inc, dec } = useCounter(props.initial)
 const cont: Ref<Topbarcontent> = ref(props.initial)
@@ -20,19 +21,19 @@ const go: Function = (name: string) => {
     <div class="content flex flex-wrap justify-center ml-auto mr-auto mt-20 relative">
       <div class=" w-150 relative h-150 p-5">
         <div absolute z-1>
-          <img src="about-five-1-1.jpeg" h-130 alt="">
+          <img :src="leftContent.img1" h-130 alt="">
         </div>
         <div class="absolute z-4 top-20 left-auto w-20 h-20 right-30 in--bg animate-ping opacity-75" />
-        <a href="https://www.youtube.com/watch?v=ven2jnMAhn0" class="absolute z-4 top-20 left-auto w-20 h-20 right-30 in--bg text-white flex items-center justify-center">
+        <a :href="leftContent.video" class="absolute z-4 top-20 left-auto w-20 h-20 right-30 in--bg text-white flex items-center justify-center">
           <p i-carbon:play-filled-alt />
         </a>
         <div absolute z-3 bottom-10 right-10>
-          <img src="about-five-1-2.jpeg" h-80 alt="">
+          <img :src="leftContent.img2" h-80 alt="">
         </div>
         <div class="years--exp pl-5 pr-5 flex justify-center items-center">
-          <span class="font-bold text-6xl pl-5 in--color">55</span>
+          <span class="font-bold text-6xl pl-5 in--color">{{ leftContent.experience.number }}</span>
           <span pl-5 text-lg font-bold>
-            Years Experience
+            {{ leftContent.experience.text }}
           </span>
         </div>
       </div>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import type { silder } from '../methods/interface'
-import type { Topbarcontent } from '../methods/interface'
+import type { Topbarcontent, leftContentAbout } from '../methods/interface'
 const user = useUserStore()
 const name = $ref(user.savedName)
 
@@ -34,11 +34,23 @@ const cont: Ref<Topbarcontent> = ref(
     name: 'Project',
   },
 )
+
+const leftContent: Ref<leftContentAbout> = ref(
+  {
+    img1: 'about-five-1-1.jpeg',
+    img2: 'about-five-1-2.jpeg',
+    video: 'https://www.youtube.com/watch?v=ven2jnMAhn0',
+    experience: {
+      number: 55,
+      text: 'Years Experience',
+    },
+  },
+)
 </script>
 
 <template>
   <silder-home :initial="allSidler" />
-  <about :initial="cont" />
+  <about :initial="cont" :left-content="leftContent" />
   <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>

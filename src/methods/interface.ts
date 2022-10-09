@@ -42,3 +42,13 @@ export declare interface Topbarcontent {
   img: string
   name: string
 }
+
+export declare interface leftContentAbout {
+  img1: string
+  img2: string
+  video: string
+  experience: {
+    number: number
+    text: string | 'Years Experience'
+  }
+}
