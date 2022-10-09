@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import type { silder } from '../methods/interface'
+import type { Topbarcontent } from '../methods/interface'
 const user = useUserStore()
 const name = $ref(user.savedName)
 
@@ -27,10 +28,17 @@ const allSidler: Ref<silder[]> = ref(
     },
   ],
 )
+const cont: Ref<Topbarcontent> = ref(
+  {
+    img: '/silder2.jpeg',
+    name: 'Project',
+  },
+)
 </script>
 
 <template>
   <silder-home :initial="allSidler" />
+  <about :initial="cont" />
   <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>

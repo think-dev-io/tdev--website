@@ -64,7 +64,7 @@ onMounted(() => {
             <h1 mb-10 font-bold text-6xl class="anime--service capitalize">
               {{ ls.textTwo }}
             </h1>
-            <a :href="ls.btn.link" class="btn--submit px-5 text-lg py-3 anime--welcome anime--service capitalize">{{ ls.btn.text }}</a>
+            <a :href="ls.btn.link" class="btn--submit anime--welcome anime--service ">{{ ls.btn.text }}</a>
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-  $icolor: #7687e5;
+$icolor: #7687e5;
 .content--header{
   position: relative;
   width: 100%;
@@ -120,8 +120,11 @@ onMounted(() => {
   border-radius: 5px;
   color: #ffff;
   background-color: $icolor ;
+  font-size: 1.125rem;
+  padding: 0.75rem 1.25rem;
   height: 40px;
-  width: 50%;
+  text-transform: capitalize;
+  width: auto;
 }
 // .bg--img{
 //   width: 1293px;
