@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import type { silder } from '../methods/interface'
-import type { Topbarcontent, leftContentAbout } from '../methods/interface'
+import type { leftContentAbout, rightContentAbout } from '../methods/interface'
 const user = useUserStore()
 const name = $ref(user.savedName)
 
@@ -28,12 +28,6 @@ const allSidler: Ref<silder[]> = ref(
     },
   ],
 )
-const cont: Ref<Topbarcontent> = ref(
-  {
-    img: '/silder2.jpeg',
-    name: 'Project',
-  },
-)
 
 const leftContent: Ref<leftContentAbout> = ref(
   {
@@ -46,11 +40,57 @@ const leftContent: Ref<leftContentAbout> = ref(
     },
   },
 )
+const rightContent: Ref<rightContentAbout> = ref(
+  {
+    text: 'ABOUT COMPANY',
+    text2: 'The World’s Networking Company',
+    paragraphe: 'Since from 2000 Building Your Better IT Solution The definition of business is an occupation or trade & the purchase and sale of products Our Mission \& Vision Voice and Data System are crucial to the success',
+    paragraphe2: 'System is a term used to refer to an organized collection symbols and processes that may be used to operate on such symbols.',
+    service: [
+      {
+        name: {
+          label: 'IT Consultant',
+          link: '/services',
+        },
+        desc: 'Smarter Solutions',
+        icon: 'i-carbon:category-add',
+      },
+      {
+        name: {
+          label: 'IT Specialist',
+          link: '/services',
+        },
+        desc: 'Faster Solutions',
+        icon: 'i-carbon:load-balancer-listener',
+      },
+    ],
+    team: [
+      {
+        btn: {
+          text: 'learn more',
+          link: '/contact',
+        },
+        name: 'fokoui marco',
+        desc: 'CO-FOUNDER CEO',
+        img: 'profile.webp',
+      },
+      {
+        btn: {
+          text: 'learn more',
+          link: '/contact',
+        },
+        name: 'Biya paul',
+        desc: 'CO-FOUNDER CEO',
+        img: 'biya.jpeg',
+      },
+    ],
+  },
+)
 </script>
 
 <template>
   <silder-home :initial="allSidler" />
-  <about :initial="cont" :left-content="leftContent" />
+  <about :left-content="leftContent" :right-content="rightContent" />
   <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>

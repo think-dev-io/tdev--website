@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import type { Ref } from 'vue'
-import { ref } from 'vue'
-import type { Topbarcontent, leftContentAbout } from '../../methods/interface'
+import type { leftContentAbout, rightContentAbout } from '../../methods/interface'
 
-const props = defineProps<{
-  initial: Topbarcontent
+defineProps<{
   leftContent: leftContentAbout
+  rightContent: rightContentAbout
 }>()
 // const { count, inc, dec } = useCounter(props.initial)
-const cont: Ref<Topbarcontent> = ref(props.initial)
+
 const router = useRouter()
 const go: Function = (name: string) => {
   if (name)
@@ -18,7 +16,7 @@ const go: Function = (name: string) => {
 
 <template>
   <section>
-    <div class="content flex flex-wrap justify-center ml-auto mr-auto mt-20 relative">
+    <div class="content flex flex-wrap justify-center items-center ml-auto mr-auto mt-20 relative">
       <div class=" w-150 relative h-150 p-5">
         <div absolute z-1>
           <img :src="leftContent.img1" h-130 alt="">
@@ -40,74 +38,65 @@ const go: Function = (name: string) => {
       <div class="w-150 p-5">
         <div>
           <h5 class="uppercase text-xl font-bold in--color mb-3">
-            ABOUT COMPANY
+            {{ rightContent.text }}
           </h5>
           <h1 capitalize text-5xl font-bold mb-5>
-            The World’s Networking Company
+            {{ rightContent.text2 }}
           </h1>
           <p mb-5>
-            Since from 2000 Building Your Better IT Solution The definition of business is an occupation or trade & the purchase and
-            sale of products Our Mission & Vision Voice and Data System are crucial to the success
+            {{ rightContent.paragraphe }}
           </p>
           <p mb-5>
-            System is a term used to refer to an organized collection symbols and processes that may be used to operate on such
-            symbols.
+            {{ rightContent.paragraphe2 }}
           </p>
         </div>
         <div>
           <div flex w-full flex-wrap justify-center mt-5 mb-5>
-            <div class="flex items-center in--bgt p-5 w--49 mr-2 mt-2">
-              <div class="i-carbon:category-add icon--about" />
+            <div
+              v-for="(ls, id) in rightContent.service"
+              :key="id"
+              class="flex items-center in--bgt p-5 w--49 mr-1 mt-2"
+            >
+              <div :class="`${ls.icon} icon--about`" />
               <div ml-5 overflow-hidden w--49>
                 <p
                   class="over--link font-bold text-xl in--color truncate cursor-pointer"
-                  @click="go('link')"
+                  @click="go(ls.name.link)"
                 >
-                  IT Consultant IT Consultant
+                  {{ ls.name.label }}
                 </p>
                 <p text-sm text-slate-700 truncate>
-                  Smarter Solutions Smarter Solutions
-                </p>
-              </div>
-            </div>
-            <div class="flex items-center in--bgt p-5 w--49 mt-2">
-              <div class="i-carbon:category-add icon--about" />
-              <div ml-5 overflow-hidden w--49>
-                <p
-                  class="over--link font-bold text-xl in--color truncate cursor-pointer"
-                  @click="go('link')"
-                >
-                  IT Consultant IT Consultant
-                </p>
-                <p text-sm text-slate-700 truncate>
-                  Smarter Solutions Smarter Solutions
+                  {{ ls.desc }}
                 </p>
               </div>
             </div>
           </div>
           <hr>
-          <div flex w-full flex-wrap justify-center mt-5 mb-5 items-center>
-            <div class="flex items-center  p-5 w--49 mt-2">
-              <img src="profile.webp" w-15>
+          <div
+            v-for="(ls, id) in rightContent.team"
+            :key="id"
+            flex w-full flex-wrap justify-center mt-2 mb-2 items-center
+          >
+            <div class="flex items-center  p-5 w-3/4 mt-2">
+              <img :src="ls.img" w-20>
               <div ml-5 overflow-hidden w--49>
                 <p class="font-bold text-xl uppercase truncate">
-                  fokoui marco
+                  {{ ls.name }}
                 </p>
                 <p class="text-sm in--color uppercase truncate">
-                  FOUNDER CEO
+                  {{ ls.desc }}
                 </p>
               </div>
             </div>
             <div class="text-center  mt-2">
-              <a href="" class="btn--submit ">
-                IT Consultant IT Consultant
+              <a :href="ls.btn.link" class="btn--submit ">
+                {{ ls.btn.text }}
               </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div>{{ cont }}</div>
   </section>
 </template>
 
