@@ -1,17 +1,63 @@
 <script setup lang="ts">
-import type { leftContentAbout, rightContentAbout } from '../../methods/interface'
+import type { leftContentAbout } from '../../methods/interface'
 
 defineProps<{
-  leftContent: leftContentAbout
-  rightContent: rightContentAbout
+  content: leftContentAbout
 }>()
 // const { count, inc, dec } = useCounter(props.initial)
-
-// const router = useRouter()
-// const go: Function = (name: string) => {
-//   if (name)
-//     router.push(name)
-// }
+const content = ref(
+  {
+    header: {
+      text: 'POPULAR TECHNOLOGIES',
+      text2: 'We Provide Our Client Best IT Solution Services',
+    },
+    content: [
+      {
+        icon: 'i-carbon:load-balancer-listener ',
+        text: 'Product Development',
+        paragraf: 'Providing the solutions for non-IT businesses.',
+      },
+      {
+        icon: 'i-carbon:load-balancer-listener ',
+        text: 'Product Development',
+        paragraf: 'Providing the solutions for non-IT businesses.',
+      },
+      {
+        icon: 'i-carbon:load-balancer-listener ',
+        text: 'Product Development',
+        paragraf: 'Providing the solutions for non-IT businesses.',
+      },
+      {
+        icon: 'i-carbon:load-balancer-listener ',
+        text: 'Product Development',
+        paragraf: 'Providing the solutions for non-IT businesses.',
+      },
+      {
+        icon: 'i-carbon:load-balancer-listener ',
+        text: 'Product Development',
+        paragraf: 'Providing the solutions for non-IT businesses.',
+      },
+    ],
+    bottombar: [
+      {
+        number: 255,
+        text: 'Business Interogation',
+      },
+      {
+        number: 325,
+        text: 'Strategies Planned',
+      },
+      {
+        number: 569,
+        text: 'Projects Relased',
+      },
+      {
+        number: 769,
+        text: 'Satisfied Clients',
+      },
+    ],
+  },
+)
 </script>
 
 <template>
@@ -22,7 +68,7 @@ defineProps<{
         <div class="w-full h-full absolute top-0 left-0 z-3 bg--content " />
         <div class="mx-auto mt-20 z-99">
           <h5 class="uppercase text-md in--color mb-5">
-            POPULAR SERVICES
+            POPULAR TECHNOLOGIES
           </h5>
           <h1 capitalize text-5xl font-bold mb-5 lg:w-200 md:w-200 xs:w-full mx-auto>
             We Provide Our Client Best IT Solution Services

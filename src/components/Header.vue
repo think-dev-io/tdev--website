@@ -17,8 +17,7 @@ const phoneNumber: Ref<PhoneNumber> = ref({
 const menu: Ref<Menu[]> = ref(
   [
     { link: '/', label: 'Home' },
-    { link: '/services', label: 'Services' },
-    { link: '/projects', label: 'Projects' },
+    { link: '/product', label: 'product' },
     { link: '/faq', label: 'FAQ' },
     { link: '/contact', label: 'Contact' },
   ],

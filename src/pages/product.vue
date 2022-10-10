@@ -6,7 +6,7 @@ import type { Topbarcontent } from '../methods/interface'
 const cont: Ref<Topbarcontent> = ref(
   {
     img: '/silder2.jpeg',
-    name: 'Project',
+    name: 'product',
   },
 )
 </script>
