@@ -90,6 +90,7 @@ const rightContent: Ref<rightContentAbout> = ref(
 <template>
   <silder-home :initial="allSidler" />
   <about :left-content="leftContent" :right-content="rightContent" />
+  <service-four :left-content="leftContent" :right-content="rightContent" />
   <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>
