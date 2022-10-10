@@ -101,8 +101,8 @@ const go: Function = (name: string) => {
 </template>
 
 <style lang="scss">
-$icolor: #7687e5;
-$icolort: #7687e521;
+$icolor: #5e73e4;
+$icolort: #5e72e42b;
 .in--color{
   color: $icolor;
 }

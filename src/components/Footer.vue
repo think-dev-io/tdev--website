@@ -117,7 +117,7 @@ const address: Ref<Address[]> = ref(
 </template>
 
 <style lang="scss">
-  $icolor: #7687e5;
+$icolor: #5e73e4;
   .content--footer{
     width: 100%;
     display: inline-block;

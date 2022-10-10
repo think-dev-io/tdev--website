@@ -31,7 +31,7 @@ const cont: Ref<Topbarcontent> = ref(props.initial)
 </template>
 
 <style lang="scss">
-$icolor: #7687e5;
+$icolor: #5e73e4;
 .bg--content{
   position: relative;
   width: 100%;
@@ -40,4 +40,4 @@ $icolor: #7687e5;
 .bg-transp{
   background-color: #00000070;
 }
- </style>
+</style>
