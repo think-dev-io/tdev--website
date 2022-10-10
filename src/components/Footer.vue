@@ -151,17 +151,13 @@ $icolor: #5e73e4;
   .form-newletter{
     display: grid;
     .form--email{
+      text-align: center;
+      text-transform: capitalize;
       height: 40px;
-      border: 1px solid #8a8d90;
+      border-right: solid 5px $icolor;
+      // border: 1px solid #8a8d90;
       border-radius: 5px;
       padding: 7px;
-    }
-    .btn--submit{
-      border-radius: 5px;
-      color: #ffff;
-      background-color: $icolor ;
-      height: 40px;
-      width: 50%;
     }
   }
 </style>

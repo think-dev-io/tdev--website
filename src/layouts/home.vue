@@ -11,3 +11,18 @@
     <Footer />
   </div>
 </template>
+
+<style lang="scss">
+$icolor: #7687e5;
+.btn--submit {
+  border-radius: 5px;
+  text-align: center;
+  color: #ffff;
+  background-color: $icolor ;
+  height: auto;
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+  text-transform: capitalize;
+  width: auto;
+}
+</style>

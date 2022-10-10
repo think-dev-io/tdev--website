@@ -156,14 +156,4 @@ $icolort: #5e72e42b;
     width: 100%;
   }
 }
-.btn--submit {
-  border-radius: 5px;
-  color: #ffff;
-  background-color: $icolor ;
-  font-size: 1.125rem;
-  padding: 0.75rem 1.25rem;
-  height: 40px;
-  text-transform: capitalize;
-  width: auto;
-}
 </style>
