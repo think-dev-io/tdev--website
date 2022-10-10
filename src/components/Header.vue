@@ -144,8 +144,8 @@ const showListLangue = ref(false)
     color: $icolor;
   }
   .call--btn{
-    background-image: linear-gradient(270deg,#2019da,#2019da,#2019da, $icolor,$icolor,$icolor);
-    background-image: linear-gradient(55deg, var(--cretech-secondary, #5e73e4,) 0%, var(--cretech-primary, #adb9f6) 100%);
+    // background-image: linear-gradient(270deg,#2019da,#2019da,#2019da, $icolor,$icolor,$icolor);
+    background-image: linear-gradient(55deg, var(--cretech-secondary, #5e73e4,) 0%, var(--cretech-primary, #2e29d4) 100%);
     width: 400px;
   }
   .list-lng{
