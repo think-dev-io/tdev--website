@@ -82,7 +82,7 @@ const showListLangue = ref(false)
           <img src="/pwa-512x512.png" alt="tdev-logo" w-20>
         </a>
       </div>
-      <div ml-4 mr-4 class="w-7/12">
+      <div ml-4 mr-4 capitalize class="w-7/12">
         <ul flex justify-items-stretch text-base>
           <li v-for="(ls, id) in menu" :key="id" p-2 ml-2 mr-2 hover:text-blue-700 @click="toggleLocales()">
             <a :href="ls.link">
