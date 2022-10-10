@@ -75,4 +75,18 @@ export declare interface rightContentAbout {
     img: string
   }[]
 }
-
+export declare interface contentserviceFoour {
+  header: {
+    text: string
+    text2: string
+  }
+  content: {
+    icon: string
+    text: string
+    paragraf: string
+  }[]
+  bottombar: {
+    number: number
+    text: string
+  }[]
+}

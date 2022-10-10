@@ -17,8 +17,7 @@ const phoneNumber: Ref<PhoneNumber> = ref({
 const menu: Ref<Menu[]> = ref(
   [
     { link: '/', label: 'Home' },
-    { link: '/services', label: 'Services' },
-    { link: '/projects', label: 'Projects' },
+    { link: '/product', label: 'product' },
     { link: '/faq', label: 'FAQ' },
     { link: '/contact', label: 'Contact' },
   ],
@@ -83,7 +82,7 @@ const showListLangue = ref(false)
           <img src="/pwa-512x512.png" alt="tdev-logo" w-20>
         </a>
       </div>
-      <div ml-4 mr-4 class="w-7/12">
+      <div ml-4 mr-4 capitalize class="w-7/12">
         <ul flex justify-items-stretch text-base>
           <li v-for="(ls, id) in menu" :key="id" p-2 ml-2 mr-2 hover:text-blue-700 @click="toggleLocales()">
             <a :href="ls.link">
@@ -133,7 +132,8 @@ const showListLangue = ref(false)
   $color: #185a9a;
   $colorTa: #f2680045;
   $bg: #13206c;
-  $icolor: #7687e5;
+  $icolor: #5e73e4;
+  $icolort: #5e72e42b;
   $bg--dark: #091320;
   .top--bar{
     background: $bg !important;
@@ -143,7 +143,8 @@ const showListLangue = ref(false)
     color: $icolor;
   }
   .call--btn{
-    background-image: linear-gradient(205deg, #4d63e2,#4d63e2, #576be1, #5c6fda,#6e7ed3);
+    // background-image: linear-gradient(270deg,#2019da,#2019da,#2019da, $icolor,$icolor,$icolor);
+    background-image: linear-gradient(55deg, var(--cretech-secondary, #5e73e4,) 0%, var(--cretech-primary, #2e29d4) 100%);
     width: 400px;
   }
   .list-lng{

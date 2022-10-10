@@ -92,7 +92,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-$icolor: #7687e5;
+$icolor: #5e73e4;
 .content--header{
   position: relative;
   width: 100%;

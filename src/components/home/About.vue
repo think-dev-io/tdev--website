@@ -17,7 +17,7 @@ const go: Function = (name: string) => {
 <template>
   <section>
     <div class="content flex flex-wrap justify-center items-center ml-auto mr-auto mt-20 relative">
-      <div class=" w-150 relative h-150 p-5">
+      <div class=" w-170 relative h-150 p-5">
         <div absolute z-1>
           <img :src="leftContent.img1" h-130 alt="">
         </div>
@@ -35,9 +35,9 @@ const go: Function = (name: string) => {
           </span>
         </div>
       </div>
-      <div class="w-150 p-5">
+      <div class="w-170 p-5">
         <div>
-          <h5 class="uppercase text-xl font-bold in--color mb-3">
+          <h5 class="uppercase text-lg in--color mb-3">
             {{ rightContent.text }}
           </h5>
           <h1 capitalize text-5xl font-bold mb-5>
@@ -101,8 +101,8 @@ const go: Function = (name: string) => {
 </template>
 
 <style lang="scss">
-$icolor: #7687e5;
-$icolort: #7687e521;
+$icolor: #5e73e4;
+$icolort: #5e72e42b;
 .in--color{
   color: $icolor;
 }
