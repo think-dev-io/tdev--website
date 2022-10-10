@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import type { leftContentAbout, rightContentAbout, silder } from '../methods/interface'
+import type { contentserviceFoour, leftContentAbout, rightContentAbout, silder } from '../methods/interface'
 const user = useUserStore()
 const name = $ref(user.savedName)
 
@@ -11,7 +11,7 @@ const go = () => {
 }
 
 const { t } = useI18n()
-const allSidler: Ref<silder[]> = ref(
+const all_sidler: Ref<silder[]> = ref(
   [
     {
       img: '/silder2.jpeg',
@@ -28,7 +28,7 @@ const allSidler: Ref<silder[]> = ref(
   ],
 )
 
-const leftContent: Ref<leftContentAbout> = ref(
+const left_content_about: Ref<leftContentAbout> = ref(
   {
     img1: 'about-five-1-1.jpeg',
     img2: 'about-five-1-2.jpeg',
@@ -39,7 +39,7 @@ const leftContent: Ref<leftContentAbout> = ref(
     },
   },
 )
-const rightContent: Ref<rightContentAbout> = ref(
+const right_content_about: Ref<rightContentAbout> = ref(
   {
     text: 'ABOUT COMPANY',
     text2: 'The World’s Networking Company',
@@ -85,12 +85,65 @@ const rightContent: Ref<rightContentAbout> = ref(
     ],
   },
 )
+const content_service_foour: Ref<contentserviceFoour> = ref(
+  {
+    header: {
+      text: 'POPULAR TECHNOLOGIES',
+      text2: 'We Provide Our Client Best IT Solution Services',
+    },
+    content: [
+      {
+        icon: 'i-carbon:load-balancer-listener ',
+        text: 'Product Development',
+        paragraf: 'Providing the solutions for non-IT businesses.',
+      },
+      {
+        icon: 'i-carbon:load-balancer-listener ',
+        text: 'Product Development',
+        paragraf: 'Providing the solutions for non-IT businesses.',
+      },
+      {
+        icon: 'i-carbon:load-balancer-listener ',
+        text: 'Product Development',
+        paragraf: 'Providing the solutions for non-IT businesses.',
+      },
+      {
+        icon: 'i-carbon:load-balancer-listener ',
+        text: 'Product Development',
+        paragraf: 'Providing the solutions for non-IT businesses.',
+      },
+      {
+        icon: 'i-carbon:load-balancer-listener ',
+        text: 'Product Development',
+        paragraf: 'Providing the solutions for non-IT businesses.',
+      },
+    ],
+    bottombar: [
+      {
+        number: 255,
+        text: 'Business Interogation',
+      },
+      {
+        number: 325,
+        text: 'Strategies Planned',
+      },
+      {
+        number: 569,
+        text: 'Projects Relased',
+      },
+      {
+        number: 769,
+        text: 'Satisfied Clients',
+      },
+    ],
+  },
+)
 </script>
 
 <template>
-  <silder-home :initial="allSidler" />
-  <about :left-content="leftContent" :right-content="rightContent" />
-  <service-four :content="leftContent" />
+  <silder-home :initial="all_sidler" />
+  <about :left-content="left_content_about" :right-content="right_content_about" />
+  <service-four :content="content_service_foour" />
   <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>

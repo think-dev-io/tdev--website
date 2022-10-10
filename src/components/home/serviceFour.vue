@@ -1,63 +1,10 @@
 <script setup lang="ts">
-import type { leftContentAbout } from '../../methods/interface'
+import type { contentserviceFoour } from '../../methods/interface'
 
 defineProps<{
-  content: leftContentAbout
+  content: contentserviceFoour
 }>()
 // const { count, inc, dec } = useCounter(props.initial)
-const content = ref(
-  {
-    header: {
-      text: 'POPULAR TECHNOLOGIES',
-      text2: 'We Provide Our Client Best IT Solution Services',
-    },
-    content: [
-      {
-        icon: 'i-carbon:load-balancer-listener ',
-        text: 'Product Development',
-        paragraf: 'Providing the solutions for non-IT businesses.',
-      },
-      {
-        icon: 'i-carbon:load-balancer-listener ',
-        text: 'Product Development',
-        paragraf: 'Providing the solutions for non-IT businesses.',
-      },
-      {
-        icon: 'i-carbon:load-balancer-listener ',
-        text: 'Product Development',
-        paragraf: 'Providing the solutions for non-IT businesses.',
-      },
-      {
-        icon: 'i-carbon:load-balancer-listener ',
-        text: 'Product Development',
-        paragraf: 'Providing the solutions for non-IT businesses.',
-      },
-      {
-        icon: 'i-carbon:load-balancer-listener ',
-        text: 'Product Development',
-        paragraf: 'Providing the solutions for non-IT businesses.',
-      },
-    ],
-    bottombar: [
-      {
-        number: 255,
-        text: 'Business Interogation',
-      },
-      {
-        number: 325,
-        text: 'Strategies Planned',
-      },
-      {
-        number: 569,
-        text: 'Projects Relased',
-      },
-      {
-        number: 769,
-        text: 'Satisfied Clients',
-      },
-    ],
-  },
-)
 </script>
 
 <template>
@@ -68,65 +15,25 @@ const content = ref(
         <div class="w-full h-full absolute top-0 left-0 z-3 bg--content " />
         <div class="mx-auto mt-20 z-99">
           <h5 class="uppercase text-md in--color mb-5">
-            POPULAR TECHNOLOGIES
+            {{ content.header.text }}
           </h5>
           <h1 capitalize text-5xl font-bold mb-5 lg:w-200 md:w-200 xs:w-full mx-auto>
-            We Provide Our Client Best IT Solution Services
+            {{ content.header.text2 }}
           </h1>
         </div>
         <div class="my-20 xl:mx-auto xl:mb-50 md:min-mx-15 xs:min-mx-5 flex overflow-auto z-99">
-          <div class="w-50 p-5 text-center service--list ml-5 ">
-            <div i-carbon:load-balancer-listener class="text-7xl in--color mx-auto mb-5" />
+          <div
+            v-for="(ls, id) in content.content"
+            :key="id"
+            class="w-50 p-5 text-center service--list ml-5"
+          >
+            <div :class="`text-7xl in--color mx-auto mb-5 ${ls.icon}`" />
             <div flex flex-col>
               <h6 text-xl font-bold mb-3>
-                Product Development
+                {{ ls.text }}
               </h6>
               <p text-xs>
-                Providing the solutions for non-IT businesses.
-              </p>
-            </div>
-          </div>
-          <div class="w-50 p-5 text-center service--list ml-5 ">
-            <div i-carbon:load-balancer-listener class="text-7xl in--color mx-auto mb-5" />
-            <div flex flex-col>
-              <h6 text-xl font-bold mb-3>
-                Product Development
-              </h6>
-              <p text-xs>
-                Providing the solutions for non-IT businesses.
-              </p>
-            </div>
-          </div>
-          <div class="w-50 p-5 text-center service--list ml-5 ">
-            <div i-carbon:load-balancer-listener class="text-7xl in--color mx-auto mb-5" />
-            <div flex flex-col>
-              <h6 text-xl font-bold mb-3>
-                Product Development
-              </h6>
-              <p text-xs>
-                Providing the solutions for non-IT businesses.
-              </p>
-            </div>
-          </div>
-          <div class="w-50 p-5 text-center service--list ml-5 ">
-            <div i-carbon:load-balancer-listener class="text-7xl in--color mx-auto mb-5" />
-            <div flex flex-col>
-              <h6 text-xl font-bold mb-3>
-                Product Development
-              </h6>
-              <p text-xs>
-                Providing the solutions for non-IT businesses.
-              </p>
-            </div>
-          </div>
-          <div class="w-50 p-5 text-center service--list ml-5 ">
-            <div i-carbon:load-balancer-listener class="text-7xl in--color mx-auto mb-5" />
-            <div flex flex-col>
-              <h6 text-xl font-bold mb-3>
-                Product Development
-              </h6>
-              <p text-xs>
-                Providing the solutions for non-IT businesses.
+                {{ ls.paragraf}}
               </p>
             </div>
           </div>
@@ -134,21 +41,13 @@ const content = ref(
       </div>
       <div xl:absolute xl:bottom-10 z-9 xl:left-auto w-full md:mt-10 z-5>
         <div mx-auto class="flex w-9/12 mx-auto text-center total-desc items-center ">
-          <div class="flex flex-col w-1/4">
-            <h3 text-5xl font-bold>255</h3>
-            <p class="text-md in--colort">Business Interogation</p>
-          </div>
-          <div class="flex flex-col w-1/4">
-            <h3 text-5xl font-bold>325</h3>
-            <p class="text-md in--colort">Strategies Planned</p>
-          </div>
-          <div class="flex flex-col w-1/4">
-            <h3 text-5xl font-bold>569</h3>
-            <p class="text-md in--colort">Projects Relased</p>
-          </div>
-          <div class="flex flex-col w-1/4">
-            <h3 text-5xl font-bold>769</h3>
-            <p class="text-md in--colort">Satisfied Clients</p>
+          <div
+            v-for="(ls, id) in content.bottombar"
+            :key="id"
+            class="flex flex-col w-1/4"
+          >
+            <h3 text-5xl font-bold>{{ ls.number }}</h3>
+            <p class="text-md in--colort">{{ ls.text }} </p>
           </div>
         </div>
       </div>
