@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import type { contentserviceFoour } from '../../methods/interface'
-
 defineProps<{
   content: contentserviceFoour
 }>()
-// const { count, inc, dec } = useCounter(props.initial)
 </script>
 
 <template>

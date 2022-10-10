@@ -32,7 +32,7 @@ const address: Ref<Address[]> = ref(
 </script>
 
 <template>
-  <div class="content--footer">
+  <div class="content--footer z-1">
     <div class="footer pl-30 pr-30 pt-20 pb-20 flex flex-wrap justify-center ">
       <div w-80 p-5>
         <a href="/">

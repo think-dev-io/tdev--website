@@ -138,12 +138,23 @@ const content_service_foour: Ref<contentserviceFoour> = ref(
     ],
   },
 )
+const content_flas_message = ref(
+  {
+    text: 'Better IT Solutions And Services At Your Fingertips',
+    btn: {
+      text: 'learn more ',
+      link: '/',
+    },
+    img: '/cta-two-bg-1-1.jpeg',
+  },
+)
 </script>
 
 <template>
   <silder-home :initial="all_sidler" />
   <about :left-content="left_content_about" :right-content="right_content_about" />
   <service-four :content="content_service_foour" />
+  <flash-message :text="content_flas_message.text" :btn="content_flas_message.btn" :bg-img="content_flas_message.img" />
   <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>
