@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import type { leftContentFEEDBACKS, rightContentFEEDBACKS } from '../../methods/interface'
+defineProps<{
+  leftContentFeedbacks: leftContentFEEDBACKS
+  rightContentFeedbacks: rightContentFEEDBACKS[]
+}>()
 </script>
 
 <template>
@@ -15,7 +20,7 @@
           <h1 text-6xl font-bold mb-10>
             We Are Trusted Worldwide Peoples
           </h1>
-          <p>
+          <p style="color: #818189 ;">
             Sed ut perspiciatis unde omnis natus error sit voluptatem accusa ntium doloremque laudantium totam rem aperiamea queipsa
             quae abillo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
             Sed ut perspiciatis unde omnis natus error sit voluptatem accusa ntium doloremque laudantium totam rem aperiamea queipsa
@@ -80,10 +85,6 @@ $icolort: #5e72e42b;
 .in--color {
   color: $icolor;
 }
-p{
-  color: #818189;
-}
-
 .in--colort {
   color: #c3c8ea;
 }
@@ -104,6 +105,9 @@ p{
   border: solid 1px #bbc1e3;
   padding: 30px;
   background-color: #fafbff;
+  p {
+      color: #818189;
+    }
   // box-shadow: 1px 1px 12px 0 rgb(206, 206, 206);
 }
 .content--info--nember:hover{

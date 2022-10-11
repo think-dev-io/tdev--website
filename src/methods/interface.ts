@@ -90,3 +90,16 @@ export declare interface contentserviceFoour {
     text: string
   }[]
 }
+
+export declare interface leftContentFEEDBACKS {
+  titel: string
+  titel2: string
+  text: string
+  link: string
+}
+export declare interface rightContentFEEDBACKS {
+  img: string
+  text: string
+  name: string
+  desc: string
+}

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import type { contentserviceFoour, leftContentAbout, rightContentAbout, silder } from '../methods/interface'
+import type { contentserviceFoour, leftContentAbout, leftContentFEEDBACKS, rightContentAbout, rightContentFEEDBACKS, silder } from '../methods/interface'
 const user = useUserStore()
 const name = $ref(user.savedName)
 
@@ -148,6 +148,27 @@ const content_flas_message = ref(
     img: '/cta-two-bg-1-1.jpeg',
   },
 )
+const left_content_feedbacks: Ref<leftContentFEEDBACKS> = ref(
+  {
+    titel: 'OUR CLIENTS',
+    titel2: 'We Are Trusted Worldwide Peoples',
+    text: ` Sed ut perspiciatis unde omnis natus error sit voluptatem accusa ntium doloremque laudantium totam rem aperiamea queipsa
+              quae abillo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              Sed ut perspiciatis unde omnis natus error sit voluptatem accusa ntium doloremque laudantium totam rem aperiamea queipsa
+              quae abillo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.`,
+    link: '/',
+  },
+)
+const right_content_feedbacks: Ref<rightContentFEEDBACKS[]> = ref(
+  [
+    {
+      img: '',
+      text: 'On the other hand denounc with ghteo indignation and dislike men who so beguiled and demoralized the charms of pleasure the momen blinded by desire cannot foresee the pain and trouble.',
+      name: 'Michal Rahul',
+      desc: 'UL - UX DESIGNER',
+    },
+  ],
+)
 </script>
 
 <template>
@@ -155,7 +176,7 @@ const content_flas_message = ref(
   <about :left-content="left_content_about" :right-content="right_content_about" />
   <service-four :content="content_service_foour" />
   <flash-message :text="content_flas_message.text" :btn="content_flas_message.btn" :bg-img="content_flas_message.img" />
-  <feedbacks />
+  <feedbacks :right-content-feedbacks="right_content_feedbacks" :left-content-feedbacks="left_content_feedbacks" />
   <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>
