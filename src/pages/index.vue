@@ -155,6 +155,7 @@ const content_flas_message = ref(
   <about :left-content="left_content_about" :right-content="right_content_about" />
   <service-four :content="content_service_foour" />
   <flash-message :text="content_flas_message.text" :btn="content_flas_message.btn" :bg-img="content_flas_message.img" />
+  <feedbacks />
   <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>
