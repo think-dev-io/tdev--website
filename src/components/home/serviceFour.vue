@@ -30,8 +30,8 @@ defineProps<{
               <h6 text-xl font-bold mb-3>
                 {{ ls.text }}
               </h6>
-              <p text-xs >
-                {{ ls.paragraf}}
+              <p text-xs>
+                {{ ls.paragraf }}
               </p>
             </div>
           </div>
@@ -44,8 +44,12 @@ defineProps<{
             :key="id"
             class="flex flex-col w-1/4"
           >
-            <h3 text-5xl font-bold>{{ ls.number }}</h3>
-            <p class="text-md in--colort">{{ ls.text }} </p>
+            <h3 text-5xl font-bold>
+              {{ ls.number }}
+            </h3>
+            <p class="text-md in--colort">
+              {{ ls.text }}
+            </p>
           </div>
         </div>
       </div>

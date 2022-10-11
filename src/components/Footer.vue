@@ -154,6 +154,7 @@ $icolor: #5e73e4;
       text-align: center;
       text-transform: capitalize;
       height: 40px;
+      color: black;
       border-right: solid 5px $icolor;
       // border: 1px solid #8a8d90;
       border-radius: 5px;

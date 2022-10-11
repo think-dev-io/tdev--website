@@ -16,7 +16,9 @@ defineProps<{
       class="bg--flash--message"
     >
       <div class=" text-center content--flash--message flex flex-col xl:px-70 md:px-19">
-        <h1 text-7xl font-bold capitalize mb-15 >{{ text }}</h1>
+        <h1 text-7xl font-bold capitalize mb-15>
+          {{ text }}
+        </h1>
         <div>
           <a :href="btn.link" class="btn--submit">{{ btn.text }}</a>
         </div>
