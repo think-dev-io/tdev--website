@@ -30,7 +30,7 @@ defineProps<{
               <h6 text-xl font-bold mb-3>
                 {{ ls.text }}
               </h6>
-              <p text-xs>
+              <p text-xs >
                 {{ ls.paragraf}}
               </p>
             </div>
@@ -94,7 +94,7 @@ $icolort: #5e72e42b;
 }
 .service--list:hover {
   border-radius: 5px;
-  background: $icolor;
+  background: linear-gradient(55deg, var(--cretech-secondary, #5e73e4, ) 0%, var(--cretech-primary, #3530db) 100%);
   color: #fff !important;
   animation: servicelist 2s;
   .in--color{
@@ -120,7 +120,7 @@ $icolort: #5e72e42b;
   }
 
   to {
-    background: $icolor;
+    background: linear-gradient(55deg, var(--cretech-secondary, #5e73e4, ) 0%, var(--cretech-primary, #3530db) 100%);
   }
 }
 .total-desc{
