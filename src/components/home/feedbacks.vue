@@ -3,6 +3,7 @@ import type { leftContentFEEDBACKS, rightContentFEEDBACKS } from '../../methods/
 defineProps<{
   leftContentFeedbacks: leftContentFEEDBACKS
   rightContentFeedbacks: rightContentFEEDBACKS[]
+  patener?: string[]
 }>()
 </script>
 
@@ -72,6 +73,21 @@ defineProps<{
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div
+        v-if="patener"
+        lg:mx-auto xl:mx-20 overflow-x-auto
+      >
+        <div class="defile flex w-full">
+          <img
+            v-for="(ls, id) in patener"
+            :key="id"
+            :src="ls"
+            width="150"
+            height="300"
+            alt=""
+          >
         </div>
       </div>
     </div>

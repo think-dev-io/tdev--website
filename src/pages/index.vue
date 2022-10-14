@@ -169,6 +169,7 @@ const right_content_feedbacks: Ref<rightContentFEEDBACKS[]> = ref(
     },
   ],
 )
+const patener = ref(['hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg'])
 </script>
 
 <template>
@@ -176,7 +177,7 @@ const right_content_feedbacks: Ref<rightContentFEEDBACKS[]> = ref(
   <about :left-content="left_content_about" :right-content="right_content_about" />
   <service-four :content="content_service_foour" />
   <flash-message :text="content_flas_message.text" :btn="content_flas_message.btn" :bg-img="content_flas_message.img" />
-  <feedbacks :right-content-feedbacks="right_content_feedbacks" :left-content-feedbacks="left_content_feedbacks" />
+  <feedbacks :right-content-feedbacks="right_content_feedbacks" :left-content-feedbacks="left_content_feedbacks" :patener="patener " />
   <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>

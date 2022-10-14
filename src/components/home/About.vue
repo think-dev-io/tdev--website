@@ -77,7 +77,7 @@ const go: Function = (name: string) => {
             :key="id"
             flex w-full flex-wrap justify-center mt-2 mb-2 items-center
           >
-            <div class="flex items-center  p-5 w-3/4 mt-2">
+            <div class="flex items-center  p-5 xl:w-3/4 lg:w-3/5 mt-2">
               <img :src="ls.img" w-20>
               <div ml-5 overflow-hidden w--49>
                 <p class="font-bold text-xl uppercase truncate">
@@ -88,7 +88,7 @@ const go: Function = (name: string) => {
                 </p>
               </div>
             </div>
-            <div class="text-center  mt-2">
+            <div class="text-center  mt-2 xl:w-1/4 lg:w-2/5">
               <a :href="ls.btn.link" class="btn--submit ">
                 {{ ls.btn.text }}
               </a>
@@ -130,7 +130,7 @@ $icolort: #5e72e42b;
   width: 250px;
   height: 90px;
   z-index: 3;
-  left: 30px;
+  left: 60px;
   background: rgb(247, 247, 247);
   border-right: 10px solid $icolor;
   border-radius: 50px 0 0 50px;
