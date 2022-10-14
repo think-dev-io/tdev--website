@@ -44,9 +44,9 @@ export declare interface Topbarcontent {
 
 export declare interface leftContentAbout {
   img1: string
-  img2: string
-  video: string
-  experience: {
+  img2?: string
+  video?: string
+  experience?: {
     number: number
     text: string | 'Years Experience'
   }
@@ -57,7 +57,7 @@ export declare interface rightContentAbout {
   text2: string
   paragraphe: string
   paragraphe2: string
-  service: {
+  service?: {
     name: {
       label: string
       link: string
@@ -65,7 +65,7 @@ export declare interface rightContentAbout {
     desc: string
     icon: string
   }[]
-  team: {
+  team?: {
     btn: {
       text: string
       link: string
@@ -74,6 +74,11 @@ export declare interface rightContentAbout {
     desc: string
     img: string
   }[]
+  company?: {
+    icon: string
+    name: string
+    decs: string
+  }
 }
 export declare interface contentserviceFoour {
   header: {
