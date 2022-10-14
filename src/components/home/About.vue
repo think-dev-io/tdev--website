@@ -17,7 +17,7 @@ const go: Function = (name: string) => {
 <template>
   <section>
     <div class="content flex flex-wrap justify-center items-center ml-auto mr-auto mt-20 relative">
-      <div class=" w-170 relative h-150 p-5">
+      <div class=" xl:w-170 lg:w-120 w-160 relative h-150 p-5">
         <div absolute z-1>
           <img :src="leftContent.img1" h-130 alt="">
         </div>
@@ -35,7 +35,7 @@ const go: Function = (name: string) => {
           </span>
         </div>
       </div>
-      <div class="w-170 p-5">
+      <div class="xl:w-170 lg:w-120 w-160 p-5">
         <div>
           <h5 class="uppercase text-lg in--color mb-3">
             {{ rightContent.text }}
@@ -77,7 +77,7 @@ const go: Function = (name: string) => {
             :key="id"
             flex w-full flex-wrap justify-center mt-2 mb-2 items-center
           >
-            <div class="flex items-center  p-5 w-3/4 mt-2">
+            <div class="flex items-center  p-5 xl:w-3/4 lg:w-3/5 mt-2">
               <img :src="ls.img" w-20>
               <div ml-5 overflow-hidden w--49>
                 <p class="font-bold text-xl uppercase truncate">
@@ -88,7 +88,7 @@ const go: Function = (name: string) => {
                 </p>
               </div>
             </div>
-            <div class="text-center  mt-2">
+            <div class="text-center  mt-2 xl:w-1/4 lg:w-2/5">
               <a :href="ls.btn.link" class="btn--submit ">
                 {{ ls.btn.text }}
               </a>
@@ -130,7 +130,7 @@ $icolort: #5e72e42b;
   width: 250px;
   height: 90px;
   z-index: 3;
-  left: 30px;
+  left: 60px;
   background: rgb(247, 247, 247);
   border-right: 10px solid $icolor;
   border-radius: 50px 0 0 50px;
