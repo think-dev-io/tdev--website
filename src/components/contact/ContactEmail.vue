@@ -27,7 +27,7 @@ const socialIcon: Ref<SOcialIcon[]> = ref(
 
 <template>
   <section mt-20>
-    <div class="container mx-auto relative">
+    <div class="container mx-auto relative mb-20">
       <div class="flex justify-center lg:mx-auto xl:mx-50 flex-wrap items-center">
         <div class="w-2/3 flex flex-col justify-center mt-10 left--content--contact">
           <div mb-10>
@@ -73,6 +73,21 @@ const socialIcon: Ref<SOcialIcon[]> = ref(
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div w-full >
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe
+            id="gmap_canvas" width="100%" height="541"
+            src="https://maps.google.com/maps?q=Douala%20bonamoussadi,%20Cameroun&t=&z=11&ie=UTF8&iwloc=&output=embed"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          />
+          <a href="https://123movies-a.com"/>
         </div>
       </div>
     </div>
@@ -140,5 +155,8 @@ $icolort: #5e72e42b;
     color: #ffff;
     border-color: #ffff !important;
   }
+}
+iframe, .mapouter, .gmap_canvas{
+  width: 100%;
 }
 </style>
