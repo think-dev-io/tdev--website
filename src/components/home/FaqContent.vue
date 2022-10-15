@@ -1,18 +1,8 @@
 <script setup lang="ts">
-const data = ref(
-  [
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus reprehenderit, animi saepe mollitia tenetur quas accusamus temporibus nobis, quaerat veritatis quo architecto ab excepturi at itaque perspiciatis id fugiat quia! ',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus reprehenderit, animi saepe mollitia tenetur quas accusamus temporibus nobis, quaerat veritatis quo architecto ab excepturi at itaque perspiciatis id fugiat quia! ',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus reprehenderit, animi saepe mollitia tenetur quas accusamus temporibus nobis, quaerat veritatis quo architecto ab excepturi at itaque perspiciatis id fugiat quia! ',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus reprehenderit, animi saepe mollitia tenetur quas accusamus temporibus nobis, quaerat veritatis quo architecto ab excepturi at itaque perspiciatis id fugiat quia! ',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus reprehenderit, animi saepe mollitia tenetur quas accusamus temporibus nobis, quaerat veritatis quo architecto ab excepturi at itaque perspiciatis id fugiat quia! ',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus reprehenderit, animi saepe mollitia tenetur quas accusamus temporibus nobis, quaerat veritatis quo architecto ab excepturi at itaque perspiciatis id fugiat quia! ',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus reprehenderit, animi saepe mollitia tenetur quas accusamus temporibus nobis, quaerat veritatis quo architecto ab excepturi at itaque perspiciatis id fugiat quia! ',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus reprehenderit, animi saepe mollitia tenetur quas accusamus temporibus nobis, quaerat veritatis quo architecto ab excepturi at itaque perspiciatis id fugiat quia! ',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus reprehenderit, animi saepe mollitia tenetur quas accusamus temporibus nobis, quaerat veritatis quo architecto ab excepturi at itaque perspiciatis id fugiat quia! ',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus reprehenderit, animi saepe mollitia tenetur quas accusamus temporibus nobis, quaerat veritatis quo architecto ab excepturi at itaque perspiciatis id fugiat quia! ',
-  ],
-)
+import type { FAQContent } from '../../methods/interface'
+const props = defineProps<{
+  data: FAQContent[]
+}>()
 const closeContent = (id: string) => {
   const el: HTMLElement = document.getElementById(id)
   el.classList.remove('bloc--faq')
@@ -27,16 +17,16 @@ const openContent = (id: string) => {
 
 <template>
   <section>
-    <div mt-20 mb-5>
+    <div mt-20 mb-10>
       <div
-        v-for="(ls, id) in data"
+        v-for="(ls, id) in props.data"
         :key="id"
         :id="`faq_content_${id}`"
         class="bloc--faq--close mx-auto  p-5 mb-5"
       >
         <div class="content--text--faq">
-          <h5 mb-2 font-bold text-xl> Question {{ id + 1 }} </h5>
-          <p> {{ ls }} </p>
+          <h5 mb-2> {{ ls.qes }} </h5>
+          <p> {{ ls.res }} </p>
         </div>
         <div ml-2 class="content--btn--faq">
           <div
@@ -77,18 +67,21 @@ $icolort: #5e72e42b;
   font-size: 60px !important;
 }
 .bloc--faq{
+  overflow: hidden;
   width: 700px;
   max-width: 100%;
   border-top: solid 2px $icolor;
   border-right: solid 2px $icolor;
   border-radius: 5px;
   color: #fff;
-  // height: 70px;
+  height: auto;
+  transition: all .33s cubic-bezier(.6, 2, .4, 1);
   background-color: $icolor;
-  // p{
-  //   display: none;
-  // }
   display: flex;
+  h5{
+    font-weight: 900;
+    font-size: 1.2rem;
+  }
   .content--btn--faq{
     .close--btn{
       cursor: pointer;
@@ -112,6 +105,7 @@ $icolort: #5e72e42b;
   }
 }
 .bloc--faq--close {
+  overflow: hidden;
   width: 700px;
   max-width: 100%;
   border-top: solid 2px $icolor;
@@ -119,7 +113,11 @@ $icolort: #5e72e42b;
   border-radius: 5px;
   height: 70px;
   background-color: rgb(249, 249, 249);
-
+  // animation: closeFaq 1s;
+  transition: all .33s cubic-bezier(.6, 2, .4, 1);
+  h5{
+    color: $icolor;
+  }
   .content--text--faq {
     float: left;
 

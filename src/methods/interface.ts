@@ -109,3 +109,8 @@ export declare interface rightContentFEEDBACKS {
   name: string
   desc: string
 }
+
+export declare interface FAQContent {
+  qes: string
+  res: string
+}

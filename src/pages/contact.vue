@@ -5,7 +5,7 @@ import type { Topbarcontent } from '../methods/interface'
 // const { t } = useI18n()
 const cont: Ref<Topbarcontent> = ref(
   {
-    img: '/silder1.jpeg',
+    img: '/silder2.jpeg',
     name: 'Contact',
   },
 )

@@ -42,13 +42,13 @@ const socialIcon: Ref<SOcialIcon[]> = ref(
             <form @submit="onSubmit">
               <div w-full mt-5>
                 <input id="name" v-model="newcontact.name" class="form--email" type="text" placeholder="You name">
-                <input id="email" v-model="newcontact.name" class="form--email ml-5" type="email" placeholder="Email Address">
+                <input id="email" v-model="newcontact.email" class="form--email ml-5" type="email" placeholder="Email Address">
               </div>
               <div w-full mt-5>
                 <textarea id="message" v-model="newcontact.message" class="form--email w-full" placeholder="White Message" />
               </div>
               <div mt-5>
-                <input type="button" class="btn--submit" value="Send a Message">
+                <input type="submit" class="btn--submit" value="Send">
               </div>
             </form>
           </div>
@@ -113,15 +113,6 @@ $icolort: #5e72e42b;
 .icon--about {
   font-size: 60px !important;
 }
-.form--email {
-  text-align: center;
-  text-transform: capitalize;
-  height: 40px;
-  color: black;
-  border-right: solid 5px $icolor;
-  border-radius: 5px;
-  padding: 7px;
-}
 .left--content--contact{
   background-color: $icolort;
   padding: 70px;
@@ -130,6 +121,7 @@ $icolort: #5e72e42b;
 
   }
   .form--email {
+      padding-right: 30px;
       text-transform: capitalize;
       height: 40px;
       color: black;
