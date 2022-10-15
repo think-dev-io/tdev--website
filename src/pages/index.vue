@@ -204,6 +204,7 @@ const patener = ref(['hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jp
   <flash-message :text="content_flas_message.text" :btn="content_flas_message.btn" :bg-img="content_flas_message.img" />
   <feedbacks :right-content-feedbacks="right_content_feedbacks" :left-content-feedbacks="left_content_feedbacks" :patener="patener" />
   <about :left-content="left_content_about2" :right-content="right_content_about2" />
+  <team-members :content="content_service_foour" />
   <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>
