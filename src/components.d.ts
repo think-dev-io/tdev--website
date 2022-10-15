@@ -12,7 +12,7 @@ declare module '@vue/runtime-core' {
     Counter: typeof import('./components/Counter.vue')['default']
     FaqContent: typeof import('./components/home/FaqContent.vue')['default']
     Feedbacks: typeof import('./components/home/feedbacks.vue')['default']
-    FlashMessage: typeof import('./components/flashMessage.vue')['default']
+    FlashMessage: typeof import('./components/FlashMessage.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
     README: typeof import('./components/README.md')['default']
@@ -20,6 +20,6 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     ServiceFour: typeof import('./components/home/serviceFour.vue')['default']
     SilderHome: typeof import('./components/silderHome.vue')['default']
-    Topbar: typeof import('./components/topbar.vue')['default']
+    Topbar: typeof import('./components/Topbar.vue')['default']
   }
 }
