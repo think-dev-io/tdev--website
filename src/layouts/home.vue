@@ -15,6 +15,7 @@
 <style lang="scss">
 $icolor: #7687e5;
 .btn--submit {
+  cursor: pointer;
   border-radius: 5px;
   text-align: center;
   color: #ffff;

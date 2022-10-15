@@ -15,8 +15,8 @@ const cont: Ref<Topbarcontent> = ref(props.initial)
     <div relative>
       <div class="bg--content" />
       <img :src="cont.img" alt="" absolute top-0 w-full h-96 z-1>
-      <div absolute top-0 w-full h-96 z-2 class="bg-transp "/>
-      <div absolute top-20 p-10 z-3>
+      <div absolute top-0 w-full h-96 z-2 class="bg-transp " />
+      <div absolute top-20 p-10 z-3 ml-20>
         <div flex text-xl text-white font-sans items-center>
           <a href="/" capitalize ml-1>Home</a>
           <div ml-1 i-carbon:chevron-right text-lg />
