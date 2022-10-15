@@ -8,8 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     About: typeof import('./components/home/About.vue')['default']
-    Contact: typeof import('./components/contact/contact.vue')['default']
-    ContactEmail: typeof import('./components/contact/ContactEmail.vue')['default']
+    ContactEmail: typeof import('./components/ContactEmail.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
     Feedbacks: typeof import('./components/home/feedbacks.vue')['default']
     FlashMessage: typeof import('./components/flashMessage.vue')['default']

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import type { Address, SOcialIcon } from '../../methods/interface'
+import type { Address, SOcialIcon } from '../methods/interface'
 const onSubmit = () => { }
 const newcontact = ref(
   {
