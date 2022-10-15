@@ -13,6 +13,7 @@ const cont: Ref<Topbarcontent> = ref(
 
 <template>
   <topbar :initial="cont" />
+  <Contact-email />
 </template>
 
 <route lang="yaml">
