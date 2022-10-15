@@ -138,6 +138,31 @@ const content_service_foour: Ref<contentserviceFoour> = ref(
     ],
   },
 )
+const left_content_about2: Ref<leftContentAbout> = ref(
+  {
+    bg: true,
+    img1: 'about-three-1-1.png',
+  },
+)
+const right_content_about2: Ref<rightContentAbout> = ref(
+  {
+    text: 'Company Benefits',
+    text2: 'Why You Should Choose Our Services',
+    paragraphe: 'Since from 2000 Building Your Better IT Solution The definition of business is an occupation or trade & the purchase and sale of products Our Mission \& Vision Voice and Data System are crucial to the success',
+    company: [
+      {
+        icon: 'i-carbon:application-mobile',
+        name: 'Expert Team Members',
+        desc: 'Services address a range of simply free text application and infrastructure needs.',
+      },
+      {
+        icon: 'i-carbon:application-web',
+        name: 'Cloud Based Services',
+        desc: 'Services address a range of simply free text application and infrastructure needs.',
+      },
+    ],
+  },
+)
 const content_flas_message = ref(
   {
     text: 'Better IT Solutions And Services At Your Fingertips',
@@ -177,7 +202,8 @@ const patener = ref(['hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jp
   <about :left-content="left_content_about" :right-content="right_content_about" />
   <service-four :content="content_service_foour" />
   <flash-message :text="content_flas_message.text" :btn="content_flas_message.btn" :bg-img="content_flas_message.img" />
-  <feedbacks :right-content-feedbacks="right_content_feedbacks" :left-content-feedbacks="left_content_feedbacks" :patener="patener " />
+  <feedbacks :right-content-feedbacks="right_content_feedbacks" :left-content-feedbacks="left_content_feedbacks" :patener="patener" />
+  <about :left-content="left_content_about2" :right-content="right_content_about2" />
   <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>

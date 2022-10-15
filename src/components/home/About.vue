@@ -18,10 +18,13 @@ const go: Function = (name: string) => {
   <section>
     <div class="content flex flex-wrap justify-center items-center ml-auto mr-auto mt-20 relative">
       <div class=" xl:w-170 lg:w-140 w-160 relative h-150 p-5 mb-5">
-        <div class="first--image z-4">
+        <div :class="leftContent.bg === true ? 'first--image z-4' : ''">
           <img :src="leftContent.img1" h-130 alt="">
         </div>
-        <div class="absolute z-4 top-20 left-auto w-20 h-20 right-30 in--bg animate-ping opacity-75" />
+        <div
+          v-if="leftContent.video"
+          class="absolute z-4 top-20 left-auto w-20 h-20 right-30 in--bg animate-ping opacity-75"
+        />
         <a
           v-if="leftContent.video"
           :href="leftContent.video"
@@ -112,13 +115,17 @@ const go: Function = (name: string) => {
           v-if="!rightContent.team && !rightContent.service && rightContent.company"
           flex flex-col mt-5
         >
-          <div flex>
+          <div
+            v-for="(ls, id) in rightContent.company"
+            :key="id"
+            flex mb-7
+          >
             <div w-32 h-25 rounded-full text-center mr-7 class="in--bgt flex items-center justify-center ">
-              <div i-carbon:application-mobile text-5xl />
+              <div :class="ls.icon" text-5xl />
             </div>
             <div w-full>
-              <h5 font-bold text-3xl class="in--color " >Cloud Based Services</h5>
-              <p text-sm class="paragraph">Services address a range of simply free text application and infrastructure needs.</p>
+              <h5 font-bold text-3xl capitalize class="in--color "> {{ ls.name }} </h5>
+              <p text-sm class="paragraph"> {{ ls.desc }}</p>
             </div>
           </div>
         </div>
