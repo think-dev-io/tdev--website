@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     About: typeof import('./components/home/About.vue')['default']
     ContactEmail: typeof import('./components/ContactEmail.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
+    FaqContent: typeof import('./components/home/FaqContent.vue')['default']
     Feedbacks: typeof import('./components/home/feedbacks.vue')['default']
     FlashMessage: typeof import('./components/flashMessage.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']

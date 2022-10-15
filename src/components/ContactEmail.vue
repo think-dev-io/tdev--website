@@ -130,13 +130,13 @@ $icolort: #5e72e42b;
 
   }
   .form--email {
-      text-align: center;
       text-transform: capitalize;
       height: 40px;
       color: black;
-      border-right: solid 5px $icolor;
+      border-right: solid 2px $icolor;
+      border-top: solid 2px $icolor;
       border-radius: 5px;
-      padding: 7px;
+      padding: 5px;
     }
     textarea{
       height: 100px !important;
