@@ -70,18 +70,18 @@ const right_content_about: Ref<rightContentAbout> = ref(
           text: 'learn more',
           link: '/contact',
         },
-        name: 'fokoui marco',
+        name: 'Biya paul',
         desc: 'CO-FOUNDER CEO',
-        img: 'profile.webp',
+        img: 'biya.jpeg',
       },
       {
         btn: {
           text: 'learn more',
           link: '/contact',
         },
-        name: 'Biya paul',
+        name: 'fokoui marco',
         desc: 'CO-FOUNDER CEO',
-        img: 'biya.jpeg',
+        img: 'profile.webp',
       },
     ],
   },
@@ -188,7 +188,7 @@ const left_content_feedbacks: Ref<leftContentFEEDBACKS> = ref(
 const right_content_feedbacks: Ref<rightContentFEEDBACKS[]> = ref(
   [
     {
-      img: '',
+      img: '/default.jpeg',
       text: 'On the other hand denounc with ghteo indignation and dislike men who so beguiled and demoralized the charms of pleasure the momen blinded by desire cannot foresee the pain and trouble.',
       name: 'Michal Rahul',
       desc: 'UL - UX DESIGNER',
@@ -250,7 +250,7 @@ const content_team_member: Ref<contentTeamMember> = ref(
         ],
       },
       {
-        pic: 'default.jpeg',
+        pic: 'default.png',
         name: 'Njoka Abdoul',
         post: 'Designer',
         social: [
@@ -273,7 +273,7 @@ const content_team_member: Ref<contentTeamMember> = ref(
         ],
       },
       {
-        pic: 'default-f.jpeg',
+        pic: 'default-f.png',
         name: 'Belinda Ndoye',
         post: 'Community manager',
         social: [

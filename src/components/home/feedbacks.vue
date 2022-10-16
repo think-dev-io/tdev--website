@@ -33,7 +33,7 @@ defineProps<{
         </div>
         <div class="xl:w-1/2 lg:w-1/2 py-10 pl-20 md:w-full ">
           <div class="flex content--info--nember items-center mb-5">
-            <img src="/profile.webp" w-30 h-30 rounded border-3 border-blue-700 ml--23 alt="">
+            <img src="/default.png" w-30 h-30 rounded border-3 border-blue-700 ml--23 alt="">
             <div ml-5>
               <p>
                 On the other hand denounc with ghteo indignation and dislike men who so beguiled and demoralized the charms of pleasure
@@ -53,7 +53,7 @@ defineProps<{
             </div>
           </div>
           <div class="flex content--info--nember items-center">
-            <img src="/profile.webp" w-30 h-30 rounded border-3 border-blue-700 ml--23 alt="">
+            <img src="/default.png" w-30 h-30 rounded border-3 border-blue-700 ml--23 alt="">
             <div ml-5>
               <p>
                 On the other hand denounc with ghteo indignation and dislike men who so beguiled and demoralized the charms of
