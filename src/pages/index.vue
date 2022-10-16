@@ -1,29 +1,29 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import type { contentTeamMember, contentserviceFoour, leftContentAbout, leftContentFEEDBACKS, rightContentAbout, rightContentFEEDBACKS, silder } from '../methods/interface'
-const user = useUserStore()
-const name = $ref(user.savedName)
+// const user = useUserStore()
+// const name = $ref(user.savedName)
 
-const router = useRouter()
-const go = () => {
-  if (name)
-    router.push(`/hi/${encodeURIComponent(name)}`)
-}
+// const router = useRouter()
+// const go = () => {
+//   if (name)
+//     router.push(`/hi/${encodeURIComponent(name)}`)
+// }
 
-const { t } = useI18n()
+// const { t } = useI18n()
 const all_sidler: Ref<silder[]> = ref(
   [
     {
-      img: '/silder2.jpeg',
+      img: '/tdev.png',
       textOne: 'Welcome to best it solutions',
       textTwo: 'Provide it solutions and services',
-      btn: { text: 'learn more ', link: '/' },
+      btn: { text: 'View', link: '/' },
     },
     {
-      img: '/silder1.jpeg',
-      textOne: 'Welcome to best it solutions',
-      textTwo: 'IQ test - What is your IQ?',
-      btn: { text: 'Next', link: '/' },
+      img: '/cv_action.png',
+      textOne: 'Tart topping dessert pudding cookie. Toffee dessert marshmallow candy lemon drops gingerbread.',
+      textTwo: 'Create your Professional CV',
+      btn: { text: 'View', link: '/' },
     },
   ],
 )
