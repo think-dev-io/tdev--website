@@ -114,3 +114,19 @@ export declare interface FAQContent {
   qes: string
   res: string
 }
+
+export declare interface contentTeamMember {
+  header: {
+    text: string
+    text2: string
+  }
+  menberinfo: {
+    pic?: string
+    name: string
+    post: string
+    social?: {
+      icon: string
+      link: string
+    }[]
+  }[]
+}

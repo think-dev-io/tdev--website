@@ -21,6 +21,6 @@ declare module '@vue/runtime-core' {
     ServiceFour: typeof import('./components/home/serviceFour.vue')['default']
     SilderHome: typeof import('./components/silderHome.vue')['default']
     TeamMembers: typeof import('./components/teamMembers.vue')['default']
-    Topbar: typeof import('./components/Topbar.vue')['default']
+    Topbar: typeof import('./components/topbar.vue')['default']
   }
 }

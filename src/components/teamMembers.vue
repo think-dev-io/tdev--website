@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { contentserviceFoour } from '../methods/interface'
-defineProps<{
-  content: contentserviceFoour
+import type { contentTeamMember } from '../methods/interface'
+const props = defineProps<{
+  content: contentTeamMember
 }>()
 </script>
 
@@ -9,35 +9,34 @@ defineProps<{
   <section mt-20>
     <div relative overflow-hidden>
       <div
-        class="content w-full justify-center text-center mx-auto flex flex-col xl:mb-30 z-4 relative bg--circle2">
-        <div class="bg--circle1 z-2" />
+        class="content w-full justify-center text-center mx-auto flex flex-col z-4 relative bg--team--member"
+      >
         <div class="w-full h-full absolute top-0 left-0 z-3 bg--content " />
         <div class="mx-auto mt-20 z-99">
           <h5 class="uppercase text-md in--color mb-5">
-            OUR TEAM MEMBERS
+            {{ props.content.header.text }}
           </h5>
           <h1 capitalize text-5xl font-bold mb-5 lg:w-200 md:w-200 xs:w-full mx-auto>
-            Our Expert Person to Provide IT Solution Services
+            {{ props.content.header.text2 }}
           </h1>
         </div>
         <div class="my-20 px-20 mx-auto flex overflow-auto z-99">
-          <div class="w-65 text-center team--list ml-5">
+          <div
+            v-for="(ls, id) in props.content.menberinfo"
+            :key="id"
+            class="w-65 text-center team--list ml-5"
+          >
             <div relative>
-              <img src="/profile.webp" z-1 alt="">
+              <img :src="ls.pic" z-1 w-full alt="">
               <div absolute bottom-5 z-2 right-5>
                 <div class="member--social--info">
                   <div class="social--link--list">
-                    <a href="">
-                      <div i-carbon:logo-facebook mx-auto my-1 />
-                    </a>
-                    <a href="">
-                      <div i-carbon:logo-instagram mx-auto my-1 />
-                    </a>
-                    <a href="">
-                      <div i-carbon:logo-twitter mx-auto my-1 />
-                    </a>
-                    <a href="">
-                      <div i-carbon:logo-linkedin mx-auto my-1 />
+                    <a
+                      v-for="(si, id) in ls.social"
+                      :key="id"
+                      :href="si.link"
+                    >
+                      <div :class="`${si.icon} mx-auto my-1`" />
                     </a>
                   </div>
                   <div class="btn--share">
@@ -47,98 +46,8 @@ defineProps<{
               </div>
             </div>
             <div p-3>
-              <h4 text-xl font-bold capitalize>Fokoui Marco</h4>
-              <p class="text-xs font-bold capitalize "> CO-FOUNDER CEO </p>
-            </div>
-          </div>
-          <div class="w-65 text-center team--list ml-5">
-            <div relative>
-              <img src="/profile.webp" z-1 alt="">
-              <div absolute bottom-5 z-2 right-5>
-                <div class="member--social--info">
-                  <div class="social--link--list">
-                    <a href="">
-                      <div i-carbon:logo-facebook mx-auto my-1 />
-                    </a>
-                    <a href="">
-                      <div i-carbon:logo-instagram mx-auto my-1 />
-                    </a>
-                    <a href="">
-                      <div i-carbon:logo-twitter mx-auto my-1 />
-                    </a>
-                    <a href="">
-                      <div i-carbon:logo-linkedin mx-auto my-1 />
-                    </a>
-                  </div>
-                  <div class="btn--share">
-                    <div i-carbon:share />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div p-3>
-              <h4 text-xl font-bold capitalize>Fokoui Marco</h4>
-              <p class="text-xs font-bold capitalize "> CO-FOUNDER CEO </p>
-            </div>
-          </div>
-          <div class="w-65 text-center team--list ml-5">
-            <div relative>
-              <img src="/profile.webp" z-1 alt="">
-              <div absolute bottom-5 z-2 right-5>
-                <div class="member--social--info">
-                  <div class="social--link--list">
-                    <a href="">
-                      <div i-carbon:logo-facebook mx-auto my-1 />
-                    </a>
-                    <a href="">
-                      <div i-carbon:logo-instagram mx-auto my-1 />
-                    </a>
-                    <a href="">
-                      <div i-carbon:logo-twitter mx-auto my-1 />
-                    </a>
-                    <a href="">
-                      <div i-carbon:logo-linkedin mx-auto my-1 />
-                    </a>
-                  </div>
-                  <div class="btn--share">
-                    <div i-carbon:share />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div p-3>
-              <h4 text-xl font-bold capitalize>Fokoui Marco</h4>
-              <p class="text-xs font-bold capitalize "> CO-FOUNDER CEO </p>
-            </div>
-          </div>
-          <div class="w-65 text-center team--list ml-5">
-            <div relative>
-              <img src="/profile.webp" z-1 alt="">
-              <div absolute bottom-5 z-2 right-5>
-                <div class="member--social--info">
-                  <div class="social--link--list">
-                    <a href="">
-                      <div i-carbon:logo-facebook mx-auto my-1 />
-                    </a>
-                    <a href="">
-                      <div i-carbon:logo-instagram mx-auto my-1 />
-                    </a>
-                    <a href="">
-                      <div i-carbon:logo-twitter mx-auto my-1 />
-                    </a>
-                    <a href="">
-                      <div i-carbon:logo-linkedin mx-auto my-1 />
-                    </a>
-                  </div>
-                  <div class="btn--share">
-                    <div i-carbon:share />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div p-3>
-              <h4 text-xl font-bold capitalize>Fokoui Marco</h4>
-              <p class="text-xs font-bold capitalize "> CO-FOUNDER CEO </p>
+              <h4 text-xl font-bold capitalize> {{ ls.name }}</h4>
+              <p class="text-xs font-bold capitalize "> {{ ls.post }}</p>
             </div>
           </div>
         </div>
@@ -249,32 +158,11 @@ $icolort: #5e72e42b;
   background: #908e0552;
   z-index: 1;
 }
-
-.bg--circle2::after {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  top: -20px;
-  right: -80px;
-  background: #db309130;
-  z-index: 1;
+.bg--team--member{
+  background-image: url('/team-bg.jpeg');
+  background-repeat: no-repeat;
 }
-
-.bg--circle2::before {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  bottom: 10px;
-  right: 100px;
-  background: #30db3330;
-  z-index: 1;
-}
-
 .bg--content {
-  background: $icolort;
+  background: #5e72e412 !important;
 }
 </style>

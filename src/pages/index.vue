@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import type { contentserviceFoour, leftContentAbout, leftContentFEEDBACKS, rightContentAbout, rightContentFEEDBACKS, silder } from '../methods/interface'
+import type { contentTeamMember, contentserviceFoour, leftContentAbout, leftContentFEEDBACKS, rightContentAbout, rightContentFEEDBACKS, silder } from '../methods/interface'
 const user = useUserStore()
 const name = $ref(user.savedName)
 
@@ -195,6 +195,108 @@ const right_content_feedbacks: Ref<rightContentFEEDBACKS[]> = ref(
   ],
 )
 const patener = ref(['hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg'])
+const content_team_member: Ref<contentTeamMember> = ref(
+  {
+    header: {
+      text: 'OUR TEAM MEMBERS',
+      text2: 'Our Expert Person to Provide IT Solution Services',
+    },
+    menberinfo: [
+      {
+        pic: '/profile.webp',
+        name: 'Fokoui Marco',
+        post: 'CEO/Software Engineer',
+        social: [
+          {
+            icon: 'i-carbon:logo-facebook',
+            link: '/',
+          },
+          {
+            icon: 'i-carbon:logo-instagram ',
+            link: '/',
+          },
+          {
+            icon: 'i-carbon:logo-twitter',
+            link: '/',
+          },
+          {
+            icon: 'i-carbon:logo-linkedin',
+            link: '/',
+          },
+        ],
+      },
+      {
+        pic: '/biya.jpeg',
+        name: 'Biya Paul',
+        post: 'CEO/Software Engineer',
+        social: [
+          {
+            icon: 'i-carbon:logo-facebook',
+            link: '/',
+          },
+          {
+            icon: 'i-carbon:logo-instagram ',
+            link: '/',
+          },
+          {
+            icon: 'i-carbon:logo-twitter',
+            link: '/',
+          },
+          {
+            icon: 'i-carbon:logo-linkedin',
+            link: '/',
+          },
+        ],
+      },
+      {
+        pic: 'default.jpeg',
+        name: 'Njoka Abdoul',
+        post: 'Designer',
+        social: [
+          {
+            icon: 'i-carbon:logo-facebook',
+            link: '/',
+          },
+          {
+            icon: 'i-carbon:logo-instagram ',
+            link: '/',
+          },
+          {
+            icon: 'i-carbon:logo-twitter',
+            link: '/',
+          },
+          {
+            icon: 'i-carbon:logo-linkedin',
+            link: '/',
+          },
+        ],
+      },
+      {
+        pic: 'default-f.jpeg',
+        name: 'Belinda Ndoye',
+        post: 'Community manager',
+        social: [
+          {
+            icon: 'i-carbon:logo-facebook',
+            link: '/',
+          },
+          {
+            icon: 'i-carbon:logo-instagram ',
+            link: '/',
+          },
+          {
+            icon: 'i-carbon:logo-twitter',
+            link: '/',
+          },
+          {
+            icon: 'i-carbon:logo-linkedin',
+            link: '/',
+          },
+        ],
+      },
+    ],
+  },
+)
 </script>
 
 <template>
@@ -204,8 +306,8 @@ const patener = ref(['hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jp
   <flash-message :text="content_flas_message.text" :btn="content_flas_message.btn" :bg-img="content_flas_message.img" />
   <feedbacks :right-content-feedbacks="right_content_feedbacks" :left-content-feedbacks="left_content_feedbacks" :patener="patener" />
   <about :left-content="left_content_about2" :right-content="right_content_about2" />
-  <team-members :content="content_service_foour" />
-  <div>
+  <team-members :content="content_team_member" />
+  <!-- <div>
     <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>
     </p>
@@ -238,7 +340,7 @@ const patener = ref(['hosting.jpeg', 'hosting.jpeg', 'hosting.jpeg', 'hosting.jp
         {{ t('button.go') }}
       </button>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <route lang="yaml">
