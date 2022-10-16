@@ -13,16 +13,17 @@ import type { contentTeamMember, contentserviceFoour, leftContentAbout, leftCont
 // const { t } = useI18n()
 const all_sidler: Ref<silder[]> = ref(
   [
-    {
-      img: '/tdev.png',
-      textOne: 'Welcome to best it solutions',
-      textTwo: 'Provide it solutions and services',
-      btn: { text: 'View', link: '/' },
-    },
+
     {
       img: '/cv_action.png',
       textOne: 'Tart topping dessert pudding cookie. Toffee dessert marshmallow candy lemon drops gingerbread.',
       textTwo: 'Create your Professional CV',
+      btn: { text: 'View', link: '/' },
+    },
+    {
+      img: '/tdev.png',
+      textOne: 'Welcome to best it solutions',
+      textTwo: 'Provide it solutions and services',
       btn: { text: 'View', link: '/' },
     },
   ],
@@ -203,48 +204,48 @@ const content_team_member: Ref<contentTeamMember> = ref(
     },
     menberinfo: [
       {
-        pic: '/profile.webp',
-        name: 'Fokoui Marco',
-        post: 'CEO/Software Engineer',
-        social: [
-          {
-            icon: 'i-carbon:logo-facebook',
-            link: '/',
-          },
-          {
-            icon: 'i-carbon:logo-instagram ',
-            link: '/',
-          },
-          {
-            icon: 'i-carbon:logo-twitter',
-            link: '/',
-          },
-          {
-            icon: 'i-carbon:logo-linkedin',
-            link: '/',
-          },
-        ],
-      },
-      {
         pic: '/biya.jpeg',
         name: 'Biya Paul',
         post: 'CEO/Software Engineer',
         social: [
           {
             icon: 'i-carbon:logo-facebook',
-            link: '/',
+            link: 'https://fr-fr.facebook.com/',
           },
           {
             icon: 'i-carbon:logo-instagram ',
-            link: '/',
+            link: 'https://www.instagram.com/accounts/login',
           },
           {
             icon: 'i-carbon:logo-twitter',
-            link: '/',
+            link: 'https://twitter.com/',
           },
           {
             icon: 'i-carbon:logo-linkedin',
-            link: '/',
+            link: 'https://www.linkedin.com/',
+          },
+        ],
+      },
+      {
+        pic: '/profile.webp',
+        name: 'Fokoui Marco',
+        post: 'CEO/Software Engineer',
+        social: [
+          {
+            icon: 'i-carbon:logo-facebook',
+            link: 'https://fr-fr.facebook.com/',
+          },
+          {
+            icon: 'i-carbon:logo-instagram ',
+            link: 'https://www.instagram.com/accounts/login',
+          },
+          {
+            icon: 'i-carbon:logo-twitter',
+            link: 'https://twitter.com/',
+          },
+          {
+            icon: 'i-carbon:logo-linkedin',
+            link: 'https://www.linkedin.com/',
           },
         ],
       },
@@ -255,19 +256,19 @@ const content_team_member: Ref<contentTeamMember> = ref(
         social: [
           {
             icon: 'i-carbon:logo-facebook',
-            link: '/',
+            link: 'https://fr-fr.facebook.com/',
           },
           {
             icon: 'i-carbon:logo-instagram ',
-            link: '/',
+            link: 'https://www.instagram.com/accounts/login',
           },
           {
             icon: 'i-carbon:logo-twitter',
-            link: '/',
+            link: 'https://twitter.com/',
           },
           {
             icon: 'i-carbon:logo-linkedin',
-            link: '/',
+            link: 'https://www.linkedin.com/',
           },
         ],
       },
@@ -278,19 +279,19 @@ const content_team_member: Ref<contentTeamMember> = ref(
         social: [
           {
             icon: 'i-carbon:logo-facebook',
-            link: '/',
+            link: 'https://fr-fr.facebook.com/',
           },
           {
             icon: 'i-carbon:logo-instagram ',
-            link: '/',
+            link: 'https://www.instagram.com/accounts/login',
           },
           {
             icon: 'i-carbon:logo-twitter',
-            link: '/',
+            link: 'https://twitter.com/',
           },
           {
             icon: 'i-carbon:logo-linkedin',
-            link: '/',
+            link: 'https://www.linkedin.com/',
           },
         ],
       },

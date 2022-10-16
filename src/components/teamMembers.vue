@@ -35,6 +35,7 @@ const props = defineProps<{
                       v-for="(si, id) in ls.social"
                       :key="id"
                       :href="si.link"
+                      target="_blank"
                     >
                       <div :class="`${si.icon} mx-auto my-1`" />
                     </a>
@@ -46,8 +47,12 @@ const props = defineProps<{
               </div>
             </div>
             <div p-3>
-              <h4 text-xl font-bold capitalize> {{ ls.name }}</h4>
-              <p class="text-xs font-bold capitalize "> {{ ls.post }}</p>
+              <h4 text-xl font-bold capitalize>
+                {{ ls.name }}
+              </h4>
+              <p class="text-xs font-bold capitalize ">
+                {{ ls.post }}
+              </p>
             </div>
           </div>
         </div>

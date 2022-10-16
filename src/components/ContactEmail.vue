@@ -42,7 +42,7 @@ const socialIcon: Ref<SOcialIcon[]> = ref(
             <form @submit="onSubmit">
               <div w-full mt-5>
                 <input id="name" v-model="newcontact.name" class="form--email" type="text" placeholder="You name">
-                <input id="email" v-model="newcontact.email" class="form--email ml-5" type="email" placeholder="Email Address">
+                <input id="email" v-model="newcontact.email" class="form--email xl:ml-5 ml-2" type="email" placeholder="Email Address">
               </div>
               <div w-full mt-5>
                 <textarea id="message" v-model="newcontact.message" class="form--email w-full" placeholder="White Message" />
